@@ -1,0 +1,30 @@
+{
+  "name": "entrepreneurs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
+    "gsap": "file:gsap-bonus.tgz",
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-slick": "^0.29.0",
+    "react-svg": "^16.1.32",
+    "sass": "^1.69.7",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "typescript": "^5"
+  }
+}
