@@ -38,15 +38,15 @@ export default function Footer() {
         <div className="section-title">
           <span>
             Réserve ton appel
-            <br /> d’audit avec
+            <br /> d&apos;audit avec
           </span>
-          <span>un membre de l’équipe</span>
+          <span>un membre de l&apos;équipe</span>
         </div>
         <div className="text-wrapper">
           <p>
-            Pour ceux prêts à agir, des membres d'Entrepreneurs.com offrent un
-            appel d'audit gratuit pour évaluer votre business et objectifs, et
-            discuter des solutions.
+            Pour ceux prêts à agir, des membres d&apos;Entrepreneurs.com offrent
+            un appel d&apos;audit gratuit pour évaluer votre business et
+            objectifs, et discuter des solutions.
           </p>
           <DoubleBut text="Réserver un Appel" />
         </div>

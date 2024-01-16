@@ -15,9 +15,9 @@ export default function Benefit() {
         </h1>
         <p>
           Qui sont conscients de leur potentiel et qui savent
-          <br /> qu'ils ne sont qu'à une étape de propulser leur activité,
-          online ou offline, à un niveau supérieur. <br /> Nous sommes cette
-          étape cruciale pour votre business.
+          <br /> qu&apos;ils ne sont qu&apos;à une étape de propulser leur
+          activité, online ou offline, à un niveau supérieur. <br /> Nous sommes
+          cette étape cruciale pour votre business.
         </p>
       </div>
       <div className="cards">
@@ -28,8 +28,8 @@ export default function Benefit() {
         <div className="card">
           <Image src={icon2} alt="" />
           <h2>
-            Acquisition d'une maîtrise Business, transmise par les meilleurs
-            experts
+            Acquisition d&apos;une maîtrise Business, transmise par les
+            meilleurs experts
           </h2>
         </div>
         <div className="card">

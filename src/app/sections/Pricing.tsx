@@ -63,8 +63,8 @@ export default function Pricing() {
           </h1>
         </div>
         <p>
-          Résultats de l'expertise acquise par Alec Henry et Entrepreneurs.com
-          depuis plus de 6 ans.
+          Résultats de l&apos;expertise acquise par Alec Henry et
+          Entrepreneurs.com depuis plus de 6 ans.
         </p>
       </div>
       <div className="cards">

@@ -10,10 +10,10 @@ export default function Benefit2() {
         <div className="small-badge">Nos programmes</div>
         <h1 className="section-title">
           <span>
-            L'impact d'Entrepreneurs.com
+            L&apos;impact d&apos;Entrepreneurs.com
             <br /> sur la vie de milliers{" "}
           </span>
-          <span>d'entrepreneurs en un graphique.</span>
+          <span>d&apos;entrepreneurs en un graphique.</span>
         </h1>
       </div>
       <div className="body">

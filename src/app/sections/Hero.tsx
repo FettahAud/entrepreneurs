@@ -5,6 +5,7 @@ import Image from "next/image";
 import overlay from "@/../public/overlay.png";
 import { ReactSVG } from "react-svg";
 import { useEffect, useRef, useState } from "react";
+// @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { gsap, ScrollTrigger, SplitText } from "../utils/gsap";
 
@@ -188,10 +189,10 @@ export default function Hero() {
           +10 000 entrepreneurs francophones ont vu leurs vies transformées
         </div>
         <h1>
-          <span>Propulsez l'Entrepreneur que</span>
+          <span>Propulsez l&apos;Entrepreneur que</span>
           <span>vous êtes à un niveau supérieur</span>
         </h1>
-        <p>oeuvrez sereinement vers l'accomplissement de votre mission.</p>
+        <p>oeuvrez sereinement vers l&apos;accomplissement de votre mission.</p>
         <DoubleBut text="En savoir plus" />
       </div>
       <div className="video-wrapper" ref={videoWrapper}>
@@ -237,7 +238,7 @@ export default function Hero() {
         <div className="highlight highlight-red"></div>
         <div className="text-quote">
           Êtes-vous prêt à transformer radicalement votre quotidien et votre vie
-          en l'espace de quelques mois,
+          en l&apos;espace de quelques mois,
           <br />
           en adoptant une stratégie globale pour votre business plutôt que de
           vous limiter à sa gestion quotidienne ?

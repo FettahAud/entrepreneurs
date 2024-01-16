@@ -50,11 +50,7 @@ export default function Faq({ faq, index }: { faq: FAQType; index: number }) {
         onClick={() => toggleAnswerVisibility()}
       >
         <div className="question">{faq.question}</div>
-        <div
-          className="answer"
-          ref={answerRef}
-          style={{ autoAlpha: 0, maxHeight: "0px" }}
-        >
+        <div className="answer" ref={answerRef} style={{ maxHeight: "0px" }}>
           {faq.answer}
         </div>
       </div>
