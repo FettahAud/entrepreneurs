@@ -54,6 +54,11 @@ li {
   font-display: swap;
 }
 
+:root {
+  --cubic-bezier: cubic-bezier(0.76, 0, 0.255, 1.005);
+  --transition: all 1500ms var(--cubic-bezier);
+}
+
 #header {
   width: 100%;
   display: flex;
@@ -371,11 +376,13 @@ li {
 
 .but.double-border {
   display: flex;
-  width: 19.1875rem;
+  // width: 19.1875rem;
+  width: 3.5rem;
   height: 3.5rem;
-  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  // padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  padding: 0;
   align-items: center;
-  gap: 1rem;
+  // gap: 1rem;
   border-radius: 1.875rem;
   border: 1px solid #fff;
   background: rgba(255, 255, 255, 0.1);
@@ -391,20 +398,38 @@ li {
     line-height: 1rem; /* 88.889% */
     flex: 1;
     text-align: start;
+    text-wrap: nowrap;
+    overflow: hidden;
   }
   img {
     height: 100%;
+    width: 3.5rem;
   }
   &::before {
     content: "";
     width: 100%;
     height: 100%;
     position: absolute;
-    left: calc(-0.63rem);
-    border-radius: 3.125rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3.5rem;
     padding: 0.63rem;
     border: 1px solid #fff;
     opacity: 0.1;
+    animation: scale 1.5s var(--cubic-bezier) infinite forwards;
+  }
+}
+@keyframes scale {
+  from {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  to {
+    width: 300%;
+    height: 300%;
+    opacity: 0;
   }
 }
 

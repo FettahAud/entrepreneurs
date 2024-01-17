@@ -1,13 +1,16 @@
 "use client";
 
 import Image from "next/image";
-// import highlight2 from "@/../public/highlight-2.svg";
-import overlay from "@/../public/overlay.png";
 import { ReactSVG } from "react-svg";
 import { useEffect, useRef, useState } from "react";
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { gsap, ScrollTrigger, SplitText } from "../utils/gsap";
+// import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import { Player } from "@lottiefiles/react-lottie-player";
+import overlay from "@/../public/overlay.png";
+import DoubleBut from "@/app/components/DoubleBut";
+import graph from "@/app/Lotties/Lottie1.json";
 
 import "@splidejs/react-splide/css";
 
@@ -20,14 +23,14 @@ import logo6 from "@/../public/logos/logo-6.png";
 import logo7 from "@/../public/logos/logo-7.png";
 import logo8 from "@/../public/logos/logo-8.png";
 import logo9 from "@/../public/logos/logo-9.png";
-import graph from "@/../public/graph-chart.png";
-import DoubleBut from "@/app/components/DoubleBut";
 
 export default function Hero() {
-  const video = useRef<HTMLVideoElement>(null);
-  const [videoState, setVideoState] = useState(false);
-  const header = useRef<HTMLDivElement>(null);
   const videoWrapper = useRef<HTMLDivElement>(null);
+  const video = useRef<HTMLVideoElement>(null);
+  const header = useRef<HTMLDivElement>(null);
+  const graphRef = useRef(null);
+  const [videoState, setVideoState] = useState(false);
+  const [graphState, setGraphState] = useState(false);
   const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
 
   const handleVideoState = () => {
@@ -83,6 +86,16 @@ export default function Hero() {
             stagger: 0.05,
           },
           "start+=1.5"
+        )
+        .fromTo(
+          header.current.querySelector(".but"),
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+          },
+          "start+=1.5"
         );
       // .fromTo(
       //   videoWrapper.current,
@@ -104,6 +117,7 @@ export default function Hero() {
         scrub: true,
         // animation: tl,
       });
+      // tl.play();
     });
 
     return () => {
@@ -116,12 +130,33 @@ export default function Hero() {
           scrub: true,
           animation: tl,
         });
+        // tl.play();
       });
+      ScrollTrigger.killAll();
       tl.kill();
       split1?.revert();
       split2?.revert();
     };
-  });
+  }, []);
+
+  useEffect(() => {
+    if (graphRef.current !== null && !graphState) {
+      ScrollTrigger.create({
+        trigger: ".lottie-graph",
+        markers: false,
+        start: "top 45%",
+        end: "bottom 45%",
+        onEnter: () => {
+          (graphRef.current as any)?.play();
+          setGraphState(true);
+        },
+      });
+    }
+
+    return () => {
+      ScrollTrigger.killAll();
+    };
+  }, [graphRef, graphState]);
 
   return (
     <div id="hero">
@@ -148,9 +183,9 @@ export default function Hero() {
               width="1608"
               height="1260"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -170,13 +205,9 @@ export default function Hero() {
               y2="954.173"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#EE0000" stop-opacity="0.42" />
-              <stop
-                offset="0.493857"
-                stop-color="#EE0000"
-                stop-opacity="0.68"
-              />
-              <stop offset="1" stop-color="#EE0000" stop-opacity="0" />
+              <stop stopColor="#EE0000" stopOpacity="0.42" />
+              <stop offset="0.493857" stopColor="#EE0000" stopOpacity="0.68" />
+              <stop offset="1" stopColor="#EE0000" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -243,7 +274,15 @@ export default function Hero() {
           en adoptant une stratégie globale pour votre business plutôt que de
           vous limiter à sa gestion quotidienne ?
         </div>
-        <Image src={graph} alt="" />
+        <Player
+          className="lottie-graph"
+          ref={graphRef}
+          autoplay={false}
+          loop={false}
+          controls={true}
+          keepLastFrame={true}
+          src={graph}
+        />
       </div>
     </div>
   );

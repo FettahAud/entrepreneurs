@@ -4,6 +4,7 @@ import icon3 from "@/../public/icons/Icon-1.png";
 import icon4 from "@/../public/icons/Icon-2.png";
 import icon5 from "@/../public/icons/Icon-3.png";
 import Image, { StaticImageData } from "next/image";
+import React from "react";
 
 type Item = {
   icon: StaticImageData;
@@ -59,12 +60,12 @@ export default function Wizard() {
       <div className="items-wrapper">
         <div className="numbers-line">
           {items.map((_, index) => (
-            <>
+            <React.Fragment key={index}>
               <div key={index} className="number">
                 <span>{index + 1}</span>
               </div>
               {index !== items.length - 1 && <div className="line"></div>}
-            </>
+            </React.Fragment>
           ))}
         </div>
         {items.map((item, index) => (

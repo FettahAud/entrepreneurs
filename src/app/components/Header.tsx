@@ -56,8 +56,8 @@ export default function Header() {
                     <rect x="0.5" width="16" height="16" rx="8" />
                     <path
                       d="M6 7L8.5 9.5L11 7"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
 

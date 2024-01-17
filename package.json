@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
     "gsap": "file:gsap-bonus.tgz",
+    "lottie-react": "^2.4.0",
+    "lottie-web": "^5.12.2",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
