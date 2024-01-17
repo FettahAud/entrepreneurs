@@ -457,14 +457,26 @@ li {
   letter-spacing: -0.075rem;
   display: flex;
   flex-direction: column;
-  span {
+  > span {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    &:first-child {
+    overflow: hidden;
+    perspective: 1000px;
+    display: inline-block;
+    div {
+      display: inline-block;
+      color: red;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    &:first-child,
+    &:first-of-type div {
       background-image: linear-gradient(180deg, #ffe6e6 26.6%, #c8aeae 100%);
     }
-    &:last-child {
+    &:last-child,
+    &:last-of-type div {
       background-image: linear-gradient(
         90deg,
         #e00 5.94%,

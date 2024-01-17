@@ -78,45 +78,11 @@
       h1 {
         text-align: center;
         font-size: 5rem;
-        font-weight: 500;
-        line-height: 100%; /* 5rem */
         letter-spacing: -0.1rem;
         margin-bottom: 1.5rem;
-        display: flex;
-        flex-direction: column;
         perspective: 1000px;
         > span {
-          display: inline-block;
           color: red;
-          perspective: 1000px;
-          overflow: hidden;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          div {
-            display: inline-block;
-            color: red;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-          }
-          &:first-of-type,
-          &:first-of-type div {
-            background-image: linear-gradient(
-              180deg,
-              #ffe6e6 26.6%,
-              #c8aeae 100%
-            );
-          }
-          &:last-of-type,
-          &:last-of-type div {
-            background-image: linear-gradient(
-              90deg,
-              #e00 5.94%,
-              #ff5664 26.9%,
-              #ff844f 50.18%
-            );
-          }
         }
       }
       > p {
@@ -257,14 +223,18 @@
         gap: 1.5rem;
         flex: 1 0 0;
         align-self: stretch;
-        border-bottom: 1px solid #e00;
         min-height: 13.75rem;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        position: relative;
         img {
           width: 6.875rem;
           height: 6.875rem;
           object-fit: cover;
+          transform-origin: left;
         }
-        h2 {
+        h2,
+        h2 div {
           font-size: 1.5rem;
           font-weight: 500;
           line-height: 120%; /* 1.8rem */
@@ -273,6 +243,14 @@
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+        }
+        .border-line {
+          width: 100%;
+          background-color: #e00;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1px;
         }
       }
     }

@@ -118,18 +118,17 @@ export default function Hero() {
     }
 
     return () => {
-      ScrollTrigger.killAll();
       tl.kill();
       split1?.revert();
       split2?.revert();
     };
   }, []);
-
+  let scrollTrigger: any = useRef(null);
   useEffect(() => {
     if (graphRef.current !== null && !graphState) {
-      ScrollTrigger.create({
+      scrollTrigger.current = ScrollTrigger.create({
         trigger: ".lottie-graph",
-        markers: true,
+        markers: false,
         start: "top 50%",
         end: "bottom 50%",
         onEnter: () => {
@@ -140,7 +139,7 @@ export default function Hero() {
     }
 
     return () => {
-      ScrollTrigger.killAll();
+      scrollTrigger.current.kill();
     };
   }, [graphRef, graphState]);
 
@@ -205,7 +204,7 @@ export default function Hero() {
         <div className="badge">
           +10 000 entrepreneurs francophones ont vu leurs vies transformées
         </div>
-        <h1>
+        <h1 className="section-title">
           <span>Propulsez l&apos;Entrepreneur que</span>
           <span>vous êtes à un niveau supérieur</span>
         </h1>
@@ -218,7 +217,7 @@ export default function Hero() {
           src="/Animation.mp4"
           autoPlay
           loop
-          controls
+          muted
           onClick={() => handleVideoState()}
         ></video>
         <div
