@@ -96,42 +96,28 @@ export default function Hero() {
             opacity: 1,
           },
           "start+=1.5"
+        )
+        .fromTo(
+          videoWrapper.current,
+          { opacity: 0 },
+          { opacity: 1 },
+          "start+=1.5"
+        )
+        .fromTo(
+          videoWrapper.current,
+          {
+            y: 100,
+            z: -150,
+          },
+          {
+            y: 0,
+            z: 0,
+          },
+          "start+=1.75"
         );
-      // .fromTo(
-      //   videoWrapper.current,
-      //   {
-      //     opacity: 0,
-      //   },
-      //   {
-      //     opacity: 1,
-      //   }
-      // );
     }
 
-    window.addEventListener("load", () => {
-      ScrollTrigger.create({
-        trigger: "#hero",
-        start: "top top",
-        end: "bottom top",
-        markers: true,
-        scrub: true,
-        // animation: tl,
-      });
-      // tl.play();
-    });
-
     return () => {
-      window.removeEventListener("load", () => {
-        ScrollTrigger.create({
-          trigger: "#hero",
-          start: "top top",
-          end: "bottom top",
-          markers: true,
-          scrub: true,
-          animation: tl,
-        });
-        // tl.play();
-      });
       ScrollTrigger.killAll();
       tl.kill();
       split1?.revert();
@@ -143,9 +129,9 @@ export default function Hero() {
     if (graphRef.current !== null && !graphState) {
       ScrollTrigger.create({
         trigger: ".lottie-graph",
-        markers: false,
-        start: "top 45%",
-        end: "bottom 45%",
+        markers: true,
+        start: "top 50%",
+        end: "bottom 50%",
         onEnter: () => {
           (graphRef.current as any)?.play();
           setGraphState(true);
