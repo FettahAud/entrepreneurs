@@ -1,6 +1,6 @@
 "use client";
 
-import { gsap, ScrollTrigger, SplitText } from "../utils/gsap";
+import { gsap, SplitText } from "../utils/gsap";
 import Image from "next/image";
 
 import icon1 from "@/../public/icons/Icon-4.png";
