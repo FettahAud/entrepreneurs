@@ -19,8 +19,8 @@ export default function Benefit2() {
         start: "top center",
         end: "bottom center",
         // on development
-        toggleActions: "play reset play reset",
-        markers: true,
+        // toggleActions: "play reset play reset",
+        // markers: true,
       },
     });
     const tl = tlRef.current;
