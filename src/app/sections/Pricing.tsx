@@ -112,7 +112,7 @@ export default function Pricing() {
           innerText: 0,
         },
         {
-          innerText: (i) => cards[i].price?.to,
+          innerText: (i: number) => cards[i].price?.to,
           roundProps: "innerText", // round to the nearest integer
           ease: "none", // linear animation
           duration: 1, // duration of the animation
@@ -128,7 +128,7 @@ export default function Pricing() {
           innerText: 0,
         },
         {
-          innerText: (i) => cards[i].price?.from,
+          innerText: (i: number) => cards[i].price?.from,
           roundProps: "innerText", // round to the nearest integer
           ease: "none", // linear animation
           duration: 1, // duration of the animation
