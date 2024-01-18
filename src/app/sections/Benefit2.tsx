@@ -35,12 +35,7 @@ export default function Benefit2() {
       { y: 0, opacity: 1 },
       "start"
     )
-      .fromTo(
-        split1.words,
-        { y: 150 },
-        { y: 0, stagger: 0.05, duration: 0.5 },
-        "start+=.25"
-      )
+      .fromTo(split1.words, { y: 150 }, { y: 0, stagger: 0.05 }, "start+=.25")
       .fromTo(
         buttons.current?.querySelectorAll(".but"),
         {

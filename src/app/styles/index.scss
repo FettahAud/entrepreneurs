@@ -548,6 +548,8 @@
     .highlight {
       left: 50%;
       top: 0;
+      transition: top 1s var(--cubic-bezier);
+      opacity: 0.3;
     }
     .section-title {
       margin: 0 auto 8.44rem;
@@ -578,13 +580,16 @@
           width: 3.75rem;
           height: 3.75rem;
           flex-shrink: 0;
-          border-radius: 3rem;
+          border-radius: 50%;
           border: 1px solid rgba(255, 255, 255, 0.5);
           backdrop-filter: blur(97px);
           display: flex;
           align-items: center;
           justify-content: center;
           opacity: 0.5;
+          position: relative;
+          background-color: rgba(255, 255, 255, 0);
+          transition: all 1.5s var(--cubic-bezier);
           span {
             font-size: 2rem;
             font-weight: 500;
@@ -599,11 +604,70 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
+          &.current {
+            border: 1px solid rgba(255, 255, 255, 0);
+            opacity: 1;
+            background-color: #e00;
+            // background: linear-gradient(
+            //   78deg,
+            //   #e00 10.04%,
+            //   #fc6e42 51.14%,
+            //   #e00 111.85%
+            // );
+            &::before,
+            &::after {
+              content: "";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: -0.5px;
+              left: -0.5px;
+              border-radius: 50%;
+              border: 1px solid #e00;
+              scale: 1.3;
+              animation: number-outlines 1.5s infinite;
+              animation-timing-function: var(--cubic-bezier);
+            }
+            &::after {
+              animation-delay: 1.5s;
+            }
+            &:not(:first-child)::before {
+              animation-delay: 0.75s;
+            }
+          }
+
+          &.passed {
+            background-color: #e00;
+            opacity: 1;
+            border: 1px solid rgba(255, 255, 255, 0);
+          }
         }
         .line {
           width: 1px;
           height: 15.125rem;
           background-color: rgba(255, 255, 255, 0.2);
+          position: relative;
+          &::before {
+            content: "";
+            width: 1px;
+            height: 100%;
+            background-color: #e00;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: transform 1.5s var(--cubic-bezier);
+          }
+        }
+        .current + .line:not(:first-child)::before {
+          transition-delay: 0.75s;
+        }
+        .number.current + .line::before {
+          transform: scaleY(0.5);
+        }
+        .number.passed + .line::before {
+          transform: scaleY(1);
         }
       }
       .item {
@@ -727,5 +791,16 @@
         }
       }
     }
+  }
+}
+
+@keyframes number-outlines {
+  from {
+    scale: 1.3;
+    opacity: 1;
+  }
+  to {
+    scale: 2.5;
+    opacity: 0;
   }
 }

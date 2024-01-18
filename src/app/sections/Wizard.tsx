@@ -1,3 +1,7 @@
+"use client";
+import { gsap, SplitText } from "../utils/gsap";
+import { useEffect, useRef } from "react";
+
 import icon1 from "@/../public/icons/Icon-8.png";
 import icon2 from "@/../public/icons/Icon-7.png";
 import icon3 from "@/../public/icons/Icon-1.png";
@@ -5,8 +9,9 @@ import icon4 from "@/../public/icons/Icon-2.png";
 import icon5 from "@/../public/icons/Icon-3.png";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
+import WizardItem from "../components/WizardItem";
 
-type Item = {
+export type Item = {
   icon: StaticImageData;
   title: string;
   des: string;
@@ -14,6 +19,10 @@ type Item = {
 };
 
 export default function Wizard() {
+  const header = useRef<HTMLDivElement>(null);
+  const tlRef = useRef<gsap.core.Timeline>();
+  const cardsTl = useRef<gsap.core.Timeline>();
+
   const items: Item[] = [
     {
       icon: icon1,
@@ -47,10 +56,38 @@ export default function Wizard() {
       buttonText: "Vous positionnez votre business à sa vraie place.",
     },
   ];
+
+  useEffect(() => {
+    if (!header.current) return;
+    tlRef.current = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#wizard",
+        start: "top center",
+        end: "bottom center",
+        // on development
+        // toggleActions: "play reset play reset",
+        // markers: true,
+      },
+    });
+    cardsTl.current = gsap.timeline({});
+    const tl = tlRef.current;
+    const split1 = new SplitText(header.current?.querySelectorAll("span"), {
+      type: "words",
+    });
+
+    tl.add("start", 0);
+    tl.fromTo(split1.words, { y: 100 }, { y: 0, stagger: 0.05 }, "start+=.25");
+
+    return () => {
+      split1?.revert();
+      tlRef.current?.kill();
+    };
+  }, []);
+
   return (
     <div id="wizard">
       <div className="highlight highlight-red"></div>
-      <h1 className="section-title">
+      <h1 ref={header} className="section-title">
         <span>
           Ce que vous obtiendrez <br />
           en décidant de franchir le pas
@@ -69,14 +106,7 @@ export default function Wizard() {
           ))}
         </div>
         {items.map((item, index) => (
-          <div key={index} className={`item ${index % 2 ? "even" : "odd"}`}>
-            <div className="icon">
-              <Image src={item.icon} alt="" />
-            </div>
-            <h1 className="title">{item.title}</h1>
-            <p className="des">{item.des}</p>
-            {item.buttonText && <div className="button">{item.buttonText}</div>}
-          </div>
+          <WizardItem key={index} item={item} index={index} />
         ))}
       </div>
     </div>

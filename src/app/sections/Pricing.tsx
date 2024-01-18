@@ -84,12 +84,7 @@ export default function Pricing() {
       { y: 0, opacity: 1 },
       "start"
     )
-      .fromTo(
-        split1.words,
-        { y: 150 },
-        { y: 0, stagger: 0.1, duration: 0.5 },
-        "start+=.25"
-      )
+      .fromTo(split1.words, { y: 150 }, { y: 0, stagger: 0.1 }, "start+=.25")
       .fromTo(
         split2.words,
         { opacity: 0 },
@@ -141,9 +136,6 @@ export default function Pricing() {
         },
         "start+=1.5"
       );
-    console.log(
-      cardsRef.current?.querySelectorAll(".card .price .price-number")
-    );
     return () => {
       split1?.revert();
       split2?.revert();

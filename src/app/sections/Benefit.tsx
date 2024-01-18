@@ -48,12 +48,7 @@ export default function Benefit() {
       { y: 0, opacity: 1 },
       "start"
     )
-      .fromTo(
-        split1.words,
-        { y: 150 },
-        { y: 0, stagger: 0.1, duration: 0.5 },
-        "start+=.25"
-      )
+      .fromTo(split1.words, { y: 150 }, { y: 0, stagger: 0.1 }, "start+=.25")
       .fromTo(
         split2.words,
         { opacity: 0 },
