@@ -5,6 +5,7 @@ import Image from "next/image";
 import arrRight from "@/../public/arrow-right.svg";
 import cardBg from "@/../public/card-bg-hover.png";
 import { useEffect, useRef } from "react";
+import RedArrRight from "../components/RedArrRight";
 
 type Card = {
   title: string;
@@ -63,13 +64,11 @@ export default function Pricing() {
     tlRef.current = gsap.timeline({
       scrollTrigger: {
         trigger: "#pricing",
-        // start: "top center",
-        // end: "bottom center",
-        // on development
-        // toggleActions: "play reset play reset",
-        end: "100%",
+        start: "top 40%",
+        end: "60% 40%",
         markers: false,
-        pin: true,
+        scrub: true,
+        once: true,
       },
     });
     const tl = tlRef.current;
@@ -192,9 +191,7 @@ export default function Pricing() {
               )}
               <button className="but">
                 <span>{card.buttonText}</span>
-                <div className="arr-wrapper">
-                  <Image src={arrRight} alt="" />
-                </div>
+                <RedArrRight />
               </button>
             </div>
           </div>

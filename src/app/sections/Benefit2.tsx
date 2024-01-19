@@ -16,12 +16,11 @@ export default function Benefit2() {
     tlRef.current = gsap.timeline({
       scrollTrigger: {
         trigger: "#benefit2",
-        // start: "top center",
-        // end: "bottom center",
-        // on development
-        // toggleActions: "play reset play reset",
+        start: "top 65%",
+        end: "40% center",
         markers: false,
-        pin: true,
+        scrub: true,
+        once: true,
       },
     });
     const tl = tlRef.current;

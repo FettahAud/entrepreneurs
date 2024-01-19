@@ -18,8 +18,11 @@ export default function Benefit() {
     tlRef.current = gsap.timeline({
       scrollTrigger: {
         trigger: "#benefits",
-        pin: true,
+        scrub: true,
         markers: false,
+        start: "top center",
+        end: "80% center",
+        once: true,
       },
     });
     const tl = tlRef.current;

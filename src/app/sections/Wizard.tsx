@@ -62,17 +62,17 @@ export default function Wizard() {
     tlRef.current = gsap.timeline({
       scrollTrigger: {
         trigger: "#wizard",
-        start: "top center",
-        end: "bottom center",
-        // on development
-        // toggleActions: "play reset play reset",
-        // markers: true,
+        start: "top 70%",
+        end: "20% 60%",
+        markers: true,
+        scrub: true,
+        once: true,
       },
     });
     cardsTl.current = gsap.timeline({});
     const tl = tlRef.current;
     const split1 = new SplitText(header.current?.querySelectorAll("span"), {
-      type: "words",
+      type: "lines,words",
     });
 
     tl.add("start", 0);

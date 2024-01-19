@@ -1,9 +1,10 @@
 "use client";
 
 import redArrow from "@/../public/red-bg-rarrow.svg";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "../utils/gsap";
+import RedArrRight from "./RedArrRight";
 
 export default function DoubleBut({ text }: { text: string }) {
   const but = useRef<HTMLButtonElement>(null);
@@ -43,6 +44,7 @@ export default function DoubleBut({ text }: { text: string }) {
     >
       <span>{text}</span>
       <Image src={redArrow} alt="" />
+      {/* <RedArrRight /> */}
     </button>
   );
 }

@@ -82,7 +82,58 @@
         margin-bottom: 1.5rem;
         perspective: 1000px;
         > span {
-          color: red;
+          // color: red;
+          &:last-of-type {
+            div {
+              &:first-child {
+                background-image: linear-gradient(
+                  69deg,
+                  #ee0101 12.93%,
+                  #f6272d 85.04%
+                );
+              }
+              &:nth-child(2) {
+                background-image: linear-gradient(
+                  69deg,
+                  #f72e36 12.93%,
+                  #ff5e61 85.04%
+                );
+              }
+              &:nth-child(3) {
+                background-image: linear-gradient(
+                  73deg,
+                  #ff6260 11.54%,
+                  #ff695c 84.71%
+                );
+              }
+              &:nth-child(4) {
+                background-image: linear-gradient(
+                  73deg,
+                  #ff6c5b 11.54%,
+                  #ff7b54 84.71%
+                );
+              }
+              &:nth-child(5) {
+                background-image: linear-gradient(
+                  73deg,
+                  #ff7f52 11.54%,
+                  #f84f30 84.71%
+                );
+              }
+              &:nth-child(6) {
+                // background-image: linear-gradient(
+                //   73deg,
+                //   #f84f30 11.54%,
+                //   #ee0101 84.71%
+                // );
+                background-image: linear-gradient(
+                  73deg,
+                  #f8492c 11.54%,
+                  #ee0101 84.71%
+                );
+              }
+            }
+          }
         }
       }
       > p {
@@ -93,6 +144,8 @@
         line-height: 120%; /* 1.8rem */
         opacity: 0.7;
         margin-bottom: 2.63rem;
+      }
+      .red-arr-wrapper {
       }
     }
     .video-wrapper {
@@ -298,7 +351,7 @@
         border: 1px solid transparent;
         max-width: 24.375rem;
         position: relative;
-        transition: all 300ms var(--cubic-bezier);
+        transition: all 250ms ease-in;
         .card-bg {
           position: absolute;
           top: 0;
@@ -307,7 +360,7 @@
           height: 100%;
           z-index: -1;
           opacity: 0;
-          transition: all 300ms var(--cubic-bezier);
+          transition: all 250ms ease-in;
         }
         .card-header {
           display: flex;
@@ -409,55 +462,12 @@
             gap: 0.75rem;
             cursor: pointer;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 300ms var(--cubic-bezier);
-            .arr-wrapper {
-              width: 2.5rem;
-              height: 2.5rem;
-              padding: 0.5rem;
+            transition: all 250ms ease-in;
+            .red-arr-wrapper {
               background-color: rgba(238, 0, 0, 0);
-              transition: all 300ms var(--cubic-bezier);
-              border-radius: 50%;
-              position: relative;
-              img {
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-              }
-              &::before {
-                content: "";
-                position: absolute;
-                top: -5%;
-                left: -5%;
-                right: 0;
-                bottom: 0;
-                border-radius: 50%;
-                background: linear-gradient(
-                  120deg,
-                  rgba(255, 255, 255, 0.6) 10%,
-                  transparent 50%,
-                  rgba(255, 255, 255, 0.6) 100%,
-                  transparent 71%,
-                  rgba(255, 255, 255, 0.6) 10%
-                );
-                z-index: -1;
-                width: 110%;
-                height: 110%;
-                opacity: 0;
-                transition: all 300ms var(--cubic-bezier);
-                // background-color: rgba(0, 0, 255, 0.262);
-              }
+              &::before,
               &::after {
-                content: "";
-                width: 110%;
-                height: 110%;
-                position: absolute;
-                top: -5%;
-                left: -5%;
-                border-radius: 50%;
-                background-color: #e00;
-                z-index: -2;
                 opacity: 0;
-                transition: all 300ms var(--cubic-bezier);
               }
             }
             span {
@@ -478,7 +488,7 @@
           .card-footer .but {
             background: rgba(255, 255, 255, 0.1);
             border-right-color: transparent;
-            .arr-wrapper {
+            .red-arr-wrapper {
               background-color: rgba(238, 0, 0, 1);
               &::before,
               &::after {
@@ -556,8 +566,10 @@
       margin: 0 auto 8.44rem;
       width: max-content;
       text-align: center;
-      h1 {
-        align-items: center;
+      align-items: center;
+      span div {
+        overflow: hidden;
+        line-height: 100%;
       }
     }
     .items-wrapper {

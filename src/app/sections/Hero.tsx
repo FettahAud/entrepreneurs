@@ -5,13 +5,12 @@ import { ReactSVG } from "react-svg";
 import { useEffect, useRef, useState } from "react";
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { gsap, ScrollTrigger, SplitText } from "../utils/gsap";
-import { Player } from "@lottiefiles/react-lottie-player";
+import { gsap, SplitText } from "../utils/gsap";
 
 import "@splidejs/react-splide/css";
 
 import DoubleBut from "@/app/components/DoubleBut";
-import graph from "@/app/Lotties/Lottie1.json";
+import { HeroGraph } from "../components/LottieGraphs";
 import overlay from "@/../public/overlay.png";
 import logo1 from "@/../public/logos/logo-1.png";
 import logo2 from "@/../public/logos/logo-2.png";
@@ -27,9 +26,7 @@ export default function Hero() {
   const videoWrapper = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const header = useRef<HTMLDivElement>(null);
-  const graphRef = useRef(null);
   const [videoState, setVideoState] = useState(false);
-  const [graphState, setGraphState] = useState(false);
   const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
 
   const handleVideoState = () => {
@@ -121,25 +118,6 @@ export default function Hero() {
       split2?.revert();
     };
   }, []);
-  let scrollTrigger: any = useRef(null);
-  useEffect(() => {
-    if (graphRef.current !== null && !graphState) {
-      scrollTrigger.current = ScrollTrigger.create({
-        trigger: ".lottie-graph",
-        markers: false,
-        start: "top 50%",
-        end: "bottom 50%",
-        onEnter: () => {
-          (graphRef.current as any)?.play();
-          setGraphState(true);
-        },
-      });
-    }
-
-    return () => {
-      scrollTrigger.current.kill();
-    };
-  }, [graphRef, graphState]);
 
   return (
     <div id="hero">
@@ -257,15 +235,7 @@ export default function Hero() {
           en adoptant une stratégie globale pour votre business plutôt que de
           vous limiter à sa gestion quotidienne ?
         </div>
-        <Player
-          className="lottie-graph"
-          ref={graphRef}
-          autoplay={false}
-          loop={false}
-          controls={true}
-          keepLastFrame={true}
-          src={graph}
-        />
+        <HeroGraph />
       </div>
     </div>
   );
