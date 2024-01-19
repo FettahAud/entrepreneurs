@@ -64,7 +64,7 @@ export default function Wizard() {
         trigger: "#wizard",
         start: "top 70%",
         end: "20% 60%",
-        markers: true,
+        markers: false,
         scrub: true,
         once: true,
       },
