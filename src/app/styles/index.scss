@@ -298,7 +298,7 @@
         border: 1px solid transparent;
         max-width: 24.375rem;
         position: relative;
-        transition: all 1000ms var(--cubic-bezier);
+        transition: all 300ms var(--cubic-bezier);
         .card-bg {
           position: absolute;
           top: 0;
@@ -307,7 +307,7 @@
           height: 100%;
           z-index: -1;
           opacity: 0;
-          transition: all 1000ms var(--cubic-bezier);
+          transition: all 300ms var(--cubic-bezier);
         }
         .card-header {
           display: flex;
@@ -409,12 +409,13 @@
             gap: 0.75rem;
             cursor: pointer;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 300ms var(--cubic-bezier);
             .arr-wrapper {
               width: 2.5rem;
               height: 2.5rem;
               padding: 0.5rem;
               background-color: rgba(238, 0, 0, 0);
-              transition: all 1000ms var(--cubic-bezier);
+              transition: all 300ms var(--cubic-bezier);
               border-radius: 50%;
               position: relative;
               img {
@@ -442,7 +443,7 @@
                 width: 110%;
                 height: 110%;
                 opacity: 0;
-                transition: all 1000ms var(--cubic-bezier);
+                transition: all 300ms var(--cubic-bezier);
                 // background-color: rgba(0, 0, 255, 0.262);
               }
               &::after {
@@ -456,7 +457,7 @@
                 background-color: #e00;
                 z-index: -2;
                 opacity: 0;
-                transition: all 1000ms var(--cubic-bezier);
+                transition: all 300ms var(--cubic-bezier);
               }
             }
             span {

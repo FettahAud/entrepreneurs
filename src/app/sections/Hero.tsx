@@ -6,14 +6,13 @@ import { useEffect, useRef, useState } from "react";
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { gsap, ScrollTrigger, SplitText } from "../utils/gsap";
-// import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { Player } from "@lottiefiles/react-lottie-player";
-import overlay from "@/../public/overlay.png";
-import DoubleBut from "@/app/components/DoubleBut";
-import graph from "@/app/Lotties/Lottie1.json";
 
 import "@splidejs/react-splide/css";
 
+import DoubleBut from "@/app/components/DoubleBut";
+import graph from "@/app/Lotties/Lottie1.json";
+import overlay from "@/../public/overlay.png";
 import logo1 from "@/../public/logos/logo-1.png";
 import logo2 from "@/../public/logos/logo-2.png";
 import logo3 from "@/../public/logos/logo-3.png";
@@ -42,7 +41,6 @@ export default function Hero() {
       video.current?.pause();
     }
   };
-
   useEffect(() => {
     const tl = gsap.timeline();
     let split1: SplitText | null = null,
