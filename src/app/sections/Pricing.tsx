@@ -63,11 +63,13 @@ export default function Pricing() {
     tlRef.current = gsap.timeline({
       scrollTrigger: {
         trigger: "#pricing",
-        start: "top center",
-        end: "bottom center",
+        // start: "top center",
+        // end: "bottom center",
         // on development
         // toggleActions: "play reset play reset",
+        end: "100%",
         markers: false,
+        pin: true,
       },
     });
     const tl = tlRef.current;
