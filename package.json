@@ -14,6 +14,7 @@
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
+    "@studio-freight/lenis": "^1.0.34",
     "gsap": "file:gsap-bonus.tgz",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",
