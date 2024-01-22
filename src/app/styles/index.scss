@@ -506,6 +506,40 @@
   #benefit2 {
     padding: 7.5rem 11.25rem;
     min-height: 100vh;
+    .header {
+      .section-title {
+        span:last-child div {
+          &:first-child {
+            background-image: linear-gradient(
+              90deg,
+              #ee0101 5.94%,
+              #ff7358 93.41%
+            );
+          }
+          &:nth-child(2) {
+            background-image: linear-gradient(
+              90deg,
+              #ff7656 5.94%,
+              #ff7f52 93.41%
+            );
+          }
+          &:nth-child(3) {
+            background-image: linear-gradient(
+              90deg,
+              #ff8151 5.94%,
+              #fd7144 93.41%
+            );
+          }
+          &:nth-child(4) {
+            background-image: linear-gradient(
+              90deg,
+              #fc683f 5.94%,
+              #ee0101 93.41%
+            );
+          }
+        }
+      }
+    }
     .body {
       display: flex;
       align-items: flex-end;
@@ -567,9 +601,28 @@
       width: max-content;
       text-align: center;
       align-items: center;
-      span div {
-        overflow: hidden;
-        line-height: 100%;
+      span {
+        div {
+          overflow: hidden;
+          line-height: 110%;
+        }
+        &:last-child div {
+          &:nth-child(1) {
+            background-image: linear-gradient(
+              90deg,
+              #ee0101 5.94%,
+              #f93942 93.41%
+            );
+          }
+          &:nth-child(2) {
+            background-image: linear-gradient(
+              90deg,
+              #fb434d 5.94%,
+              #ff8052 42.78%,
+              #ee0101 93.41%
+            );
+          }
+        }
       }
     }
     .items-wrapper {

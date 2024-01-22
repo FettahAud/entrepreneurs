@@ -232,6 +232,38 @@ li {
       rgba(254, 50, 15, 0.1) 30.72%,
       rgba(254, 50, 15, 0) 86.38%
     );
+    .section-title {
+      span:last-of-type div {
+        &:first-child {
+          background-image: linear-gradient(
+            90deg,
+            #ee0101 5.94%,
+            #ee0101 93.41%
+          );
+        }
+        &:nth-child(2) {
+          background-image: linear-gradient(
+            90deg,
+            #f11012 5.94%,
+            #ff6160 93.41%
+          );
+        }
+        &:nth-child(3) {
+          background-image: linear-gradient(
+            90deg,
+            #ff645f 5.94%,
+            #ff6d5a 93.41%
+          );
+        }
+        &:nth-child(4) {
+          background-image: linear-gradient(
+            90deg,
+            #ff6f59 5.94%,
+            #fc683f 93.41%
+          );
+        }
+      }
+    }
     .text-wrapper {
       display: flex;
       flex-direction: column;
