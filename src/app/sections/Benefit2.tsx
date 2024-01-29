@@ -2,9 +2,9 @@
 import { gsap, ScrollTrigger, SplitText } from "../utils/gsap";
 import Image from "next/image";
 import StarBut from "../components/StarBut";
-import graph from "@/../public/graph-chart-2.png";
 import arrRight from "@/../public/arrow-right.svg";
 import { useEffect, useRef } from "react";
+import { BenefitGraph } from "../components/LottieGraphs";
 
 export default function Benefit2() {
   const header = useRef<HTMLDivElement>(null);
@@ -76,7 +76,7 @@ export default function Benefit2() {
             <Image src={arrRight} alt="" />
           </div>
         </div>
-        <Image className="graph" src={graph} alt="" />
+        <BenefitGraph />
       </div>
     </div>
   );

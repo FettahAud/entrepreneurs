@@ -31,14 +31,15 @@ const BenefitGraph = () => {
     loop: false,
     autoplay: false,
     animationData: graph2,
+    className: "graph",
   });
   const Animation = useLottieInteractivity({
     lottieObj,
     mode: "scroll",
     actions: [
       {
-        visibility: [0.2, 0.6],
-        frames: [0, 400],
+        visibility: [0.3, 0.5],
+        frames: [0, 170],
         type: "seek",
       },
     ],
