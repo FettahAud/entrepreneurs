@@ -1,12 +1,14 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { gsap, SplitText } from "../utils/gsap";
 import Image from "next/image";
+import Lottie from "lottie-react";
 
 import icon1 from "@/../public/icons/Icon-4.png";
 import icon2 from "@/../public/icons/Icon-5.png";
 import icon3 from "@/../public/icons/Icon-6.png";
-import { useEffect, useRef } from "react";
+import letter from "@/app/Lotties/E.json";
 
 export default function Benefit() {
   const header = useRef<HTMLDivElement>(null);
@@ -115,6 +117,7 @@ export default function Benefit() {
 
   return (
     <div id="benefits">
+      <Lottie animationData={letter} className="letter-e" />
       <div className="highlight highlight-red"></div>
       <div ref={header} className="header">
         <div className="small-badge">Nos programmes</div>

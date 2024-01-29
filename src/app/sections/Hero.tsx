@@ -190,8 +190,8 @@ export default function Hero() {
       <div className="video-wrapper" ref={videoWrapper}>
         <video
           ref={video}
-          src="/Animation.mp4"
-          autoPlay
+          src="/video.mp4"
+          poster="/thumbnail.png"
           loop
           muted
           onClick={() => handleVideoState()}
