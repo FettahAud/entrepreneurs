@@ -6,6 +6,7 @@ import arrRight from "@/../public/arrow-right.svg";
 import cardBg from "@/../public/card-bg-hover.png";
 import { useEffect, useRef } from "react";
 import RedArrRight from "../components/RedArrRight";
+import { useGSAP } from "@gsap/react";
 
 type Card = {
   title: string;
@@ -57,21 +58,19 @@ export default function Pricing() {
 
   const header = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const tlRef = useRef<gsap.core.Timeline>();
 
-  useEffect(() => {
+  useGSAP(() => {
     if (!header.current || !cardsRef.current) return;
-    tlRef.current = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#pricing",
-        start: "top 40%",
-        end: "60% 40%",
+        start: "top 80%",
+        end: "60% 70%",
         markers: false,
         scrub: true,
         once: true,
       },
     });
-    const tl = tlRef.current;
     const split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {
       type: "words",
     });
@@ -85,7 +84,7 @@ export default function Pricing() {
       { y: 0, opacity: 1 },
       "start"
     )
-      .fromTo(split1.words, { y: 150 }, { y: 0, stagger: 0.1 }, "start+=.25")
+      .fromTo(split1.words, { y: 150 }, { y: 0, stagger: 0.1 }, "start+=.1")
       .fromTo(
         split2.words,
         { opacity: 0 },
@@ -102,8 +101,9 @@ export default function Pricing() {
           y: 0,
           opacity: 1,
           stagger: 0.2,
+          duration: 2,
         },
-        "start+=0.5"
+        "start+=5"
       )
       .fromTo(
         gsap.utils.toArray(
@@ -114,12 +114,12 @@ export default function Pricing() {
         },
         {
           innerText: (i: number) => cards[i].price?.to,
-          roundProps: "innerText", // round to the nearest integer
-          ease: "none", // linear animation
-          duration: 1, // duration of the animation
-          stagger: 0.2, // stagger the animation
+          roundProps: "innerText",
+          ease: "none",
+          duration: 1,
+          stagger: 0.2,
         },
-        "start+=1.5"
+        "+=3"
       )
       .fromTo(
         gsap.utils.toArray(
@@ -137,13 +137,7 @@ export default function Pricing() {
         },
         "start+=1.5"
       );
-    return () => {
-      split1?.revert();
-      split2?.revert();
-      tlRef.current?.scrollTrigger?.kill();
-      tlRef.current?.kill();
-    };
-  }, []);
+  });
 
   return (
     <div id="pricing">

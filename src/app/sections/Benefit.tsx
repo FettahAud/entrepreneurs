@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap, SplitText } from "../utils/gsap";
 import Image from "next/image";
 import Lottie from "lottie-react";
@@ -9,25 +9,25 @@ import icon1 from "@/../public/icons/Icon-4.png";
 import icon2 from "@/../public/icons/Icon-5.png";
 import icon3 from "@/../public/icons/Icon-6.png";
 import letter from "@/app/Lotties/E.json";
+import { useGSAP } from "@gsap/react";
 
 export default function Benefit() {
   const header = useRef<HTMLDivElement>(null);
   const cards = useRef<HTMLDivElement>(null);
-  const tlRef = useRef<gsap.core.Timeline>();
 
-  useEffect(() => {
+  useGSAP(() => {
     if (!header.current || !cards.current) return;
-    tlRef.current = gsap.timeline({
+
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#benefits",
         scrub: true,
         markers: false,
-        start: "top center",
-        end: "80% center",
+        start: "top 70%",
+        end: "80% 70%",
         once: true,
       },
     });
-    const tl = tlRef.current;
     const split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {
       type: "words",
     });
@@ -64,9 +64,10 @@ export default function Benefit() {
         },
         {
           opacity: 1,
-          stagger: 0.2,
+          stagger: 0.5,
+          duration: 0.75,
         },
-        "start+=.5"
+        "start+=3.5"
       )
       .fromTo(
         cards.current.querySelectorAll(".card .border-line"),
@@ -76,9 +77,9 @@ export default function Benefit() {
         {
           width: "100%",
           duration: 0.75,
-          stagger: 0.2,
+          stagger: 0.5,
         },
-        "start+=.65"
+        "start+=3.5"
       )
       .fromTo(
         gsap.utils.toArray(cards.current?.querySelectorAll(".card img")),
@@ -89,10 +90,10 @@ export default function Benefit() {
         {
           rotateY: 0,
           translateX: 0,
-          stagger: 0.15,
+          stagger: 0.5,
           // duration: 0.5,
         },
-        "start+=.75"
+        "start+=3.5"
       )
       .fromTo(
         cardSplits.map((split) => split.words),
@@ -103,17 +104,9 @@ export default function Benefit() {
           opacity: 1,
           stagger: 0.1,
         },
-        "start+=.75"
+        "start+=3.5"
       );
-
-    return () => {
-      split1?.revert();
-      split2?.revert();
-      cardSplits?.forEach((split) => split?.revert());
-      tlRef.current?.scrollTrigger?.kill();
-      tlRef.current?.kill();
-    };
-  }, []);
+  });
 
   return (
     <div id="benefits">

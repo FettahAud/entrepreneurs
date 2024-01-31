@@ -5,25 +5,26 @@ import StarBut from "../components/StarBut";
 import arrRight from "@/../public/arrow-right.svg";
 import { useEffect, useRef } from "react";
 import { BenefitGraph } from "../components/LottieGraphs";
+import { useGSAP } from "@gsap/react";
+
+// TODO: Find a way to revert split text on animation ends
 
 export default function Benefit2() {
   const header = useRef<HTMLDivElement>(null);
   const buttons = useRef<HTMLDivElement>(null);
-  const tlRef = useRef<gsap.core.Timeline>();
 
-  useEffect(() => {
+  useGSAP(() => {
     if (!header.current || !buttons.current) return;
-    tlRef.current = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#benefit2",
-        start: "top 65%",
-        end: "40% center",
-        markers: false,
+        start: "top 80%",
+        end: "30% 70%",
+        markers: true,
         scrub: true,
-        once: true,
+        // once: true,
       },
     });
-    const tl = tlRef.current;
     const split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {
       type: "words",
     });
@@ -48,12 +49,6 @@ export default function Benefit2() {
         },
         "start+=0.5"
       );
-
-    return () => {
-      split1?.revert();
-      tlRef.current?.scrollTrigger?.kill();
-      tlRef.current?.kill();
-    };
   }, []);
 
   return (

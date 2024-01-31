@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.0",
     "@lottiefiles/lottie-interactivity": "github:lottiefiles/lottie-interactivity",
     "@lottiefiles/lottie-player": "^2.0.2",
     "@lottiefiles/react-lottie-player": "^3.5.3",
@@ -16,6 +17,7 @@
     "@splidejs/splide": "^4.1.4",
     "@studio-freight/lenis": "^1.0.34",
     "gsap": "file:gsap-bonus.tgz",
+    "gsap-react": "^1.3.2",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",
     "next": "14.0.4",
