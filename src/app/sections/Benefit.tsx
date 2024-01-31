@@ -22,10 +22,10 @@ export default function Benefit() {
       scrollTrigger: {
         trigger: "#benefits",
         scrub: true,
-        markers: false,
+        markers: true,
         start: "top 70%",
-        end: "80% 70%",
-        once: true,
+        end: "80% 80%",
+        // once: true,
       },
     });
     const split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {

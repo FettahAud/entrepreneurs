@@ -27,7 +27,7 @@ export default function WizardItem({
           trigger: itemRef.current,
           start: "top 65%",
           end: "bottom 65%",
-          markers: true,
+          markers: false,
           onEnter: () => {
             numbers![index]?.classList.add("current");
             highlight!.style.top = `${(index + 1) * 230}px`;
