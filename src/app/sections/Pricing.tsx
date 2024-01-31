@@ -65,7 +65,7 @@ export default function Pricing() {
       scrollTrigger: {
         trigger: "#pricing",
         start: "top 80%",
-        end: "60% 70%",
+        end: "50% 50%",
         markers: false,
         scrub: true,
         once: true,
@@ -81,15 +81,20 @@ export default function Pricing() {
     tl.fromTo(
       header.current.querySelector(".small-badge"),
       { y: 150, opacity: 0 },
-      { y: 0, opacity: 1 },
-      "start"
+      { y: 0, opacity: 1 }
+      // "start"
     )
-      .fromTo(split1.words, { y: 150 }, { y: 0, stagger: 0.1 }, "start+=.1")
+      .fromTo(
+        split1.words,
+        { y: 150 },
+        { y: 0, stagger: 0.1 }
+        // "start+=.3"
+      )
       .fromTo(
         split2.words,
         { opacity: 0 },
-        { opacity: 1, stagger: 0.05 },
-        "start+=0.25"
+        { opacity: 1, stagger: 0.05 }
+        // "start+=0.5"
       )
       .fromTo(
         cardsRef.current?.querySelectorAll(".card"),
@@ -101,9 +106,9 @@ export default function Pricing() {
           y: 0,
           opacity: 1,
           stagger: 0.2,
-          duration: 2,
-        },
-        "start+=5"
+          // duration: 2,
+        }
+        // "start+=.3"
       )
       .fromTo(
         gsap.utils.toArray(
@@ -118,8 +123,8 @@ export default function Pricing() {
           ease: "none",
           duration: 1,
           stagger: 0.2,
-        },
-        "+=3"
+        }
+        // "start+=.35"
       )
       .fromTo(
         gsap.utils.toArray(
@@ -134,8 +139,8 @@ export default function Pricing() {
           ease: "none", // linear animation
           duration: 1, // duration of the animation
           stagger: 0.2, // stagger the animation
-        },
-        "start+=1.5"
+        }
+        // "start+=1.5"
       );
   });
 

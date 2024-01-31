@@ -20,9 +20,9 @@ export default function Benefit2() {
         trigger: "#benefit2",
         start: "top 80%",
         end: "30% 70%",
-        markers: true,
+        markers: false,
         scrub: true,
-        // once: true,
+        once: true,
       },
     });
     const split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {

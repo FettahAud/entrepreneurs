@@ -22,16 +22,15 @@ export default function WizardItem({
         itemRef.current?.parentElement?.parentElement?.querySelector(
           ".highlight"
         );
-      console.log(highlight);
       tlRef.current = gsap.timeline({
         scrollTrigger: {
           trigger: itemRef.current,
-          start: "top center",
-          end: "bottom center",
-          markers: false,
+          start: "top 65%",
+          end: "bottom 65%",
+          markers: true,
           onEnter: () => {
             numbers![index]?.classList.add("current");
-            highlight!.style.top = `${(index + 1) * 200}px`;
+            highlight!.style.top = `${(index + 1) * 230}px`;
           },
           onLeave: () => {
             numbers![index]?.classList.remove("current");
@@ -43,7 +42,7 @@ export default function WizardItem({
           onEnterBack: () => {
             numbers![index]?.classList.remove("passed");
             numbers![index]?.classList.add("current");
-            highlight!.style.top = `${(index + 1) * 200}px`;
+            highlight!.style.top = `${(index + 1) * 230}px`;
           },
         },
       });
