@@ -1,20 +1,5 @@
 import Faq from "../components/Faq";
 import { FAQType } from "../components/Faq";
-import { gsap } from "../utils/gsap";
-
-7) 
-
-
-8) 
-
-
-
-9) 
-
-
-10) 
-
-
 
 export default function FAQs() {
   const faqs: FAQType[] = [
@@ -29,7 +14,8 @@ export default function FAQs() {
     },
     {
       question: "A qui s'adresse vos accompagnements ?",
-      answer: "Les coachs d'Entrepreneurs.com sont des experts de leur discipline, eux-mêmes entrepreneurs, sélectionnés avec rigueur pour leur maîtrise, leurs expériences et leur volonté d'aider les Entrepreneurs à accomplir leur mission.",
+      answer:
+        "Les coachs d'Entrepreneurs.com sont des experts de leur discipline, eux-mêmes entrepreneurs, sélectionnés avec rigueur pour leur maîtrise, leurs expériences et leur volonté d'aider les Entrepreneurs à accomplir leur mission.",
     },
     {
       question: "A qui s'adresse vos accompagnements ?",
@@ -43,11 +29,11 @@ export default function FAQs() {
     },
     {
       question: "Quel est votre taux de réussite avec vos accompagnements ?",
-      answer: "Chaque accompagnement réside dans un écosystème de réussite où tous les membres d'Entrepreneurs.comm s'investissent à 100% pour garantir les résultats annoncés aux entrepreneurs qui s'investissent à 100%.",
+      answer:
+        "Chaque accompagnement réside dans un écosystème de réussite où tous les membres d'Entrepreneurs.comm s'investissent à 100% pour garantir les résultats annoncés aux entrepreneurs qui s'investissent à 100%.",
     },
     {
-      question:
-        "À quoi ressemble votre accompagnement ?",
+      question: "À quoi ressemble votre accompagnement ?",
       answer: `Nos accompagnements s'adaptent à chaque business, industrie et Entrepreneur.
       Vous bénéficiez d'une mise à disposition des ressources dont vous avez besoin pour atteindre vos objectifs : la formation en ligne adéquate, l'équipe de coachs, une mise en relation avec le réseau d'Alec, la communauté des membres d'Entrepreneurs.com.`,
     },
@@ -63,13 +49,15 @@ export default function FAQs() {
       answer: `Oui, tous les accompagnements d'Entrepreneurs.com s'adaptent à tout type de business et d'offre : en ligne ou hors ligne.`,
     },
     {
-      question: "Cela fait combien de temps que vous accompagnez des entreprises à se développer ?",
-      answer: "Alec Henry et son équipe accompagnent depuis + de 6ans les Entrepreneurs francophones à passer leur business au niveau supérieur, quelque soit leur industrie, leur offre ou leurs enjeux.",
+      question:
+        "Cela fait combien de temps que vous accompagnez des entreprises à se développer ?",
+      answer:
+        "Alec Henry et son équipe accompagnent depuis + de 6ans les Entrepreneurs francophones à passer leur business au niveau supérieur, quelque soit leur industrie, leur offre ou leurs enjeux.",
     },
     {
       question: "Combien de clients avez-vous pu accompagner ?",
-answer: `On a accompagné +10.000 entrepreneurs à devenir libre et +32 entrepreneurs jusqu’au premier million d’euros.`
-    }
+      answer: `On a accompagné +10.000 entrepreneurs à devenir libre et +32 entrepreneurs jusqu’au premier million d’euros.`,
+    },
   ];
 
   return (
