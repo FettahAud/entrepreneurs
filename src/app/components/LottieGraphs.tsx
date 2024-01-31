@@ -38,8 +38,8 @@ const BenefitGraph = () => {
     mode: "scroll",
     actions: [
       {
-        visibility: [0.3, 0.5],
-        frames: [0, 170],
+        visibility: [0, 0.4],
+        frames: [0, 200],
         type: "seek",
       },
     ],

@@ -10,6 +10,7 @@ import icon5 from "@/../public/icons/Icon-3.png";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import WizardItem from "../components/WizardItem";
+import { useGSAP } from "@gsap/react";
 
 export type Item = {
   icon: StaticImageData;
@@ -20,8 +21,6 @@ export type Item = {
 
 export default function Wizard() {
   const header = useRef<HTMLDivElement>(null);
-  const tlRef = useRef<gsap.core.Timeline>();
-  const cardsTl = useRef<gsap.core.Timeline>();
 
   const items: Item[] = [
     {
@@ -57,31 +56,24 @@ export default function Wizard() {
     },
   ];
 
-  useEffect(() => {
+  useGSAP(() => {
     if (!header.current) return;
-    tlRef.current = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#wizard",
-        start: "top 70%",
-        end: "20% 60%",
+        start: "top 80%",
+        end: "20% 80%",
         markers: false,
         scrub: true,
-        once: true,
+        // once: true,
       },
     });
-    cardsTl.current = gsap.timeline({});
-    const tl = tlRef.current;
     const split1 = new SplitText(header.current?.querySelectorAll("span"), {
       type: "lines,words",
     });
 
     tl.add("start", 0);
-    tl.fromTo(split1.words, { y: 100 }, { y: 0, stagger: 0.05 }, "start+=.25");
-
-    return () => {
-      split1?.revert();
-      tlRef.current?.kill();
-    };
+    tl.fromTo(split1.words, { y: 100 }, { y: 0, stagger: 0.05 }, "0");
   }, []);
 
   return (

@@ -22,7 +22,7 @@ export default function Benefit() {
       scrollTrigger: {
         trigger: "#benefits",
         scrub: true,
-        markers: true,
+        markers: false,
         start: "top 70%",
         end: "80% 80%",
         // once: true,

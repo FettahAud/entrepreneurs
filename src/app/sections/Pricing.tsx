@@ -65,7 +65,7 @@ export default function Pricing() {
       scrollTrigger: {
         trigger: "#pricing",
         start: "top 80%",
-        end: "50% 50%",
+        end: "50% 55%",
         markers: false,
         scrub: true,
         once: true,

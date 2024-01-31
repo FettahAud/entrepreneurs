@@ -1,9 +1,9 @@
 "use client";
-import { gsap, ScrollTrigger, SplitText } from "../utils/gsap";
+import { gsap, SplitText } from "../utils/gsap";
 import Image from "next/image";
 import StarBut from "../components/StarBut";
 import arrRight from "@/../public/arrow-right.svg";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { BenefitGraph } from "../components/LottieGraphs";
 import { useGSAP } from "@gsap/react";
 
