@@ -53,10 +53,21 @@ li {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Neue";
+  src: url("../../public/fonts/montreal/PPNeueMontreal-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --cubic-bezier: cubic-bezier(0.76, 0, 0.255, 1.005);
   --transition: all 1500ms var(--cubic-bezier);
+  --x: 11.25rem;
+  --top: 7.5rem;
+  --bottom: 7.5rem;
 }
 
 #header {
@@ -212,7 +223,7 @@ li {
 }
 
 #footer {
-  padding: 3.75rem 11.25rem;
+  padding: 3.75rem var(--x);
   position: relative;
   .highlight {
     left: 80%;
@@ -575,10 +586,13 @@ li {
   border-radius: 50%;
   position: relative;
   background-color: rgba(238, 0, 0, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   img {
     object-fit: cover;
-    width: 100%;
-    height: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
   }
   &::before {
     content: "";
@@ -613,5 +627,40 @@ li {
     background-color: #e00;
     z-index: -2;
     transition: all 250ms ease-in;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --x: 5.875rem;
+  }
+  #footer {
+    .header {
+      gap: 1.62rem;
+      .text-wrapper {
+        max-width: 20rem;
+        p {
+          font-size: 0.875rem;
+        }
+      }
+    }
+    .footer .upper-section .lists {
+      display: flex;
+      gap: 5.75rem;
+      .list:first-of-type {
+        width: unset;
+      }
+    }
+  }
+  .section-title {
+    font-size: 3rem;
+  }
+  .red-arr-wrapper {
+    width: 1.73625rem;
+    height: 1.73625rem;
+    img {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 }

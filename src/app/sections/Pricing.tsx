@@ -148,19 +148,19 @@ export default function Pricing() {
     <div id="pricing">
       <div className="highlight highlight-red"></div>
       <div ref={header} className="header">
-        <div>
-          <div className="small-badge">
-            Appliqués et validés par +10.000 entrepreneurs francophones
-          </div>
+        <div className="small-badge">
+          Appliqués et validés par +10.000 entrepreneurs francophones
+        </div>
+        <div className="inner-header">
           <h1 className="section-title">
             <span>4 Accompagnements</span>
             <span>Proposés</span>
           </h1>
+          <p>
+            Résultats de l&apos;expertise acquise par Alec Henry et
+            Entrepreneurs.com depuis plus de 6 ans.
+          </p>
         </div>
-        <p>
-          Résultats de l&apos;expertise acquise par Alec Henry et
-          Entrepreneurs.com depuis plus de 6 ans.
-        </p>
       </div>
       <div ref={cardsRef} className="cards">
         {cards.map((card, i) => (

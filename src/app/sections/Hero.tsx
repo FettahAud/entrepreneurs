@@ -21,6 +21,7 @@ import logo6 from "@/../public/logos/logo-6.png";
 import logo7 from "@/../public/logos/logo-7.png";
 import logo8 from "@/../public/logos/logo-8.png";
 import logo9 from "@/../public/logos/logo-9.png";
+import { useGSAP } from "@gsap/react";
 
 export default function Hero() {
   const videoWrapper = useRef<HTMLDivElement>(null);
@@ -38,7 +39,8 @@ export default function Hero() {
       video.current?.pause();
     }
   };
-  useEffect(() => {
+
+  useGSAP(() => {
     const tl = gsap.timeline();
     let split1: SplitText | null = null,
       split2: SplitText | null = null;
@@ -48,6 +50,13 @@ export default function Hero() {
       });
       split2 = new SplitText(header.current?.querySelector("p"), {
         type: "words",
+      });
+      tl.then(() => {
+        split1?.revert();
+        split2?.revert();
+        header.current
+          ?.querySelectorAll("h1 span")
+          .forEach((span) => (span.style.overflow = "visible"));
       });
       tl.add("start", 0);
       tl.fromTo(
@@ -111,13 +120,7 @@ export default function Hero() {
           "start+=1.75"
         );
     }
-
-    return () => {
-      tl.kill();
-      split1?.revert();
-      split2?.revert();
-    };
-  }, []);
+  });
 
   return (
     <div id="hero">
@@ -182,7 +185,7 @@ export default function Hero() {
         </div>
         <h1 className="section-title">
           <span>Propulsez l&apos;Entrepreneur que</span>
-          <span>vous êtes à un niveau supérieur</span>
+          <span>vgous êtes à un niveau supérieur</span>
         </h1>
         <p>oeuvrez sereinement vers l&apos;accomplissement de votre mission.</p>
         <DoubleBut text="En savoir plus" />

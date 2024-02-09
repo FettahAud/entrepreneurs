@@ -1,11 +1,17 @@
 export const calculateRem = () => {
-  if (document.documentElement.clientWidth > 1920) {
+  // TODO: Fix, under 375px it's mixing px values
+  if (window.innerWidth > 1920 || window.innerWidth < 375) {
     document.documentElement.style.fontSize = "16px";
     return;
-  } else if (document.documentElement.clientWidth < 1280) {
-    document.documentElement.style.fontSize = "10.66px";
-    return;
+  } else {
+    let rem = 16;
+    if (window.innerWidth > 1280) {
+      rem = (16 / 1920) * window.innerWidth;
+    } else if (window.innerWidth > 768) {
+      rem = (16 / 1280) * window.innerWidth;
+    } else if (window.innerWidth > 375) {
+      rem = (16 / 768) * window.innerWidth;
+    }
+    document.documentElement.style.fontSize = `${rem}px`;
   }
-  const rem = (16 / 1920) * document.documentElement.clientWidth;
-  document.documentElement.style.fontSize = `${rem}px`;
 };
