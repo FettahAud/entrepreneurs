@@ -6,11 +6,17 @@ import { useEffect, useRef } from "react";
 import { gsap } from "../utils/gsap";
 import RedArrRight from "./RedArrRight";
 
-export default function DoubleBut({ text }: { text: string }) {
+export default function DoubleBut({
+  text,
+  disableAnimation = false,
+}: {
+  text: string;
+  disableAnimation?: boolean;
+}) {
   const but = useRef<HTMLButtonElement>(null);
   const tl = gsap.timeline({ paused: true });
   useEffect(() => {
-    if (but.current) {
+    if (but.current && !disableAnimation) {
       tl.add("start", 0);
       tl.to(
         but.current.querySelector("span"),
@@ -22,6 +28,7 @@ export default function DoubleBut({ text }: { text: string }) {
         but.current,
         {
           width: " 19.1875rem",
+          height: "3.5rem",
           paddingTop: "0.5rem",
           paddingRight: "0.5rem",
           paddingBottom: "0.5rem",
@@ -33,12 +40,12 @@ export default function DoubleBut({ text }: { text: string }) {
     return () => {
       tl.kill();
     };
-  }, [tl]);
+  }, [tl, disableAnimation]);
 
   return (
     <button
       ref={but}
-      className="but double-border"
+      className={`but double-border ${disableAnimation ? "no-anim" : ""}`}
       onMouseOver={() => tl.play()}
       onMouseLeave={() => tl.reverse()}
     >

@@ -48,7 +48,7 @@ export default function Footer() {
             un appel d&apos;audit gratuit pour évaluer votre business et
             objectifs, et discuter des solutions.
           </p>
-          <DoubleBut text="Réserver un Appel" />
+          <DoubleBut text="Réserver un Appel" disableAnimation={true} />
         </div>
       </div>
       <div className="footer">

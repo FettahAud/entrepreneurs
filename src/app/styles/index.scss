@@ -184,6 +184,9 @@
           opacity: 0;
           pointer-events: none;
         }
+        img {
+          height: 1.5rem;
+        }
       }
       &::before {
         content: "";
@@ -899,8 +902,8 @@
         .play-but {
           width: 4.6875rem;
           height: 4.6875rem;
-          svg {
-            scale: 0.8;
+          img {
+            height: 1.125rem;
           }
         }
       }
@@ -1022,6 +1025,196 @@
             font-size: 0.875rem;
           }
         }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    #hero {
+      padding-bottom: var(--top);
+      .header {
+        padding: 7.25rem 0 4rem;
+        .badge {
+          margin-bottom: 1.5rem;
+        }
+        > p {
+          margin-bottom: 1.5rem;
+          font-size: 1rem;
+        }
+        h1 {
+          font-size: 2.25rem;
+          letter-spacing: -0.045rem;
+        }
+      }
+      .video-wrapper {
+        max-width: unset;
+        width: 100%;
+        padding: 0 var(--x);
+        &::before {
+          width: calc(95% - 8rem);
+          left: calc(2.5% + 4rem);
+        }
+        .play-but {
+          height: 3.125rem;
+          width: 3.125rem;
+          img {
+            height: 0.75rem;
+          }
+        }
+      }
+      .client-logos {
+        max-width: unset;
+        width: 100%;
+        padding: 0 var(--x);
+        margin-bottom: 14.2rem;
+      }
+      .graph {
+        margin-bottom: 0;
+        .text-quote {
+          margin-left: var(--x);
+        }
+        .hero-graph {
+          width: 100%;
+          padding: 0 var(--x);
+        }
+      }
+    }
+    #benefits {
+      .header {
+        max-width: 19.5rem;
+        margin-bottom: 6rem;
+        p {
+          letter-spacing: -0.0175rem;
+        }
+      }
+      .cards {
+        gap: 2rem;
+        .card {
+          min-height: 10.625rem;
+          img {
+            width: 4rem;
+            height: 4rem;
+          }
+          h2 {
+            font-size: 0.875rem;
+            letter-spacing: -0.0175rem;
+          }
+        }
+      }
+      .letter-e {
+        width: 25.40963rem;
+        height: 32.75956rem;
+      }
+    }
+    #pricing {
+      gap: 3.9rem;
+      margin-bottom: 0;
+      .header {
+        p {
+          font-size: 0.875rem;
+          max-width: 11.01956rem;
+        }
+      }
+      .cards {
+        height: unset;
+        flex-direction: column;
+        align-items: unset;
+        gap: 0.75rem;
+        .card {
+          width: 100%;
+          max-width: unset;
+          gap: 2.5rem;
+          padding: 2rem 1.5rem;
+          .card-header {
+            flex-direction: row;
+            gap: 0;
+            p {
+              font-size: 0.75rem;
+            }
+            h1 {
+              flex: 1 0 50%;
+            }
+          }
+          .card-footer {
+            gap: 1.5rem;
+            .price {
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              p {
+                font-size: 0.875rem;
+                line-height: unset;
+                letter-spacing: -0.0175rem;
+              }
+              div span {
+                font-size: 0.875rem;
+                &.price-number {
+                  font-size: 1.5rem;
+                }
+              }
+            }
+            .but {
+              height: 3.5rem;
+              padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+              span {
+                font-size: 1rem;
+              }
+            }
+          }
+          .card-bg {
+            display: none;
+          }
+        }
+      }
+    }
+    #benefit2 {
+      .body {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 4.3rem;
+      }
+    }
+    #wizard {
+      padding: var(--top) 0;
+      .section-title {
+        margin-bottom: 5.8rem;
+      }
+      .items-wrapper {
+        padding-right: 4.25rem;
+        gap: 4.37rem;
+        .numbers-line {
+          left: 2.7rem;
+          transform: translateX(0%);
+          height: 100%;
+          .line {
+            height: unset;
+            flex: 1 0;
+          }
+        }
+        .item {
+          align-self: flex-end !important;
+          max-width: 34.375rem;
+          .icon {
+            width: 4.5rem;
+            height: 4.5rem;
+          }
+          .title {
+            font-size: 1.25rem;
+          }
+          .des {
+            font-size: 0.875rem;
+          }
+          &.even {
+            align-items: flex-start;
+            text-align: start;
+          }
+        }
+      }
+    }
+    #faq {
+      flex-direction: column;
+      gap: 2rem;
+      .faqs-wrapper .faq-item .faq .question {
+        font-size: 1rem;
       }
     }
   }

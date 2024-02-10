@@ -203,7 +203,7 @@ export default function Hero() {
           className={`play-but ${videoState && "active"}`}
           onClick={() => handleVideoState()}
         >
-          <ReactSVG src="/play.svg" />
+          <img src="/play.svg" />
         </div>
       </div>
       <div className="client-logos">

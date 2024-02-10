@@ -35,7 +35,7 @@ export default function Header() {
   ];
   return (
     <header id="header">
-      <Image src={logo} alt="logo" />
+      <Image src={logo} alt="logo" className="logo" />
       <nav>
         <ul>
           {nav.map((item) => (
