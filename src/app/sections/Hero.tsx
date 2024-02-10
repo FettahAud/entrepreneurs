@@ -56,7 +56,9 @@ export default function Hero() {
         split2?.revert();
         header.current
           ?.querySelectorAll("h1 span")
-          .forEach((span) => (span.style.overflow = "visible"));
+          .forEach(
+            (span) => ((span as HTMLElement).style.overflow = "visible")
+          );
       });
       tl.add("start", 0);
       tl.fromTo(
