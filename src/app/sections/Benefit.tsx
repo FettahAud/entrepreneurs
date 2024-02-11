@@ -134,8 +134,8 @@ export default function Benefit() {
         <div className="card">
           <Image src={icon2} alt="" />
           <h2>
-            Acquisition d&apos;une maîtrise Business, transmise par les
-            meilleurs experts
+            Acquisition d'une maîtrise Business, transmise par les meilleurs
+            experts
           </h2>
           <div className="border-line"></div>
         </div>

@@ -23,6 +23,9 @@ import logo8 from "@/../public/logos/logo-8.png";
 import logo9 from "@/../public/logos/logo-9.png";
 import { useGSAP } from "@gsap/react";
 
+/**
+ * TODO: Fix client-logos image sizes on 375px
+ */
 export default function Hero() {
   const videoWrapper = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
@@ -190,7 +193,7 @@ export default function Hero() {
           <span>vgous êtes à un niveau supérieur</span>
         </h1>
         <p>oeuvrez sereinement vers l&apos;accomplissement de votre mission.</p>
-        <DoubleBut text="En savoir plus" />
+        <DoubleBut text="En savoir plus" disableAnimation={false} />
       </div>
       <div className="video-wrapper" ref={videoWrapper}>
         <video

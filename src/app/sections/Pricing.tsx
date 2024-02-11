@@ -28,7 +28,14 @@ export default function Pricing() {
         to: 5000,
       },
       buttonText: "En savoir plus sur le Coaching Starter",
-      des: `Tout ce dont vous avez besoin pour élever méthodiquement votre projet entrepreneurial.Le bon état d'esprit,La bonne posture,La bonne offresur le bon marché.`,
+      des: `
+      Tout ce dont vous avez besoin pour élever méthodiquement votre projet entrepreneurial.
+      
+
+      Le bon état d'esprit,
+      La bonne posture,
+      La bonne offresur
+      le bon marché.`,
     },
     {
       title: "Le Systeme",

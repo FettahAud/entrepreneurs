@@ -2,7 +2,7 @@
 
 import redArrow from "@/../public/red-bg-rarrow.svg";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "../utils/gsap";
 import RedArrRight from "./RedArrRight";
 
@@ -15,8 +15,14 @@ export default function DoubleBut({
 }) {
   const but = useRef<HTMLButtonElement>(null);
   const tl = gsap.timeline({ paused: true });
+  const [animationState, setAnimationState] = useState(disableAnimation);
   useEffect(() => {
-    if (but.current && !disableAnimation) {
+    if (window.innerWidth < 768) {
+      setAnimationState(true);
+    }
+  }, []);
+  useEffect(() => {
+    if (but.current && !animationState) {
       tl.add("start", 0);
       tl.to(
         but.current.querySelector("span"),
@@ -37,15 +43,29 @@ export default function DoubleBut({
         "start+=0.25"
       );
     }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768 && animationState) {
+        setAnimationState(false);
+      } else if (window.innerWidth < 768 && !animationState) {
+        setAnimationState(true);
+      }
+    });
     return () => {
       tl.kill();
+      window.removeEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          setAnimationState(false);
+        } else {
+          setAnimationState(true);
+        }
+      });
     };
-  }, [tl, disableAnimation]);
+  }, [tl, animationState]);
 
   return (
     <button
       ref={but}
-      className={`but double-border ${disableAnimation ? "no-anim" : ""}`}
+      className={`but double-border ${animationState ? "no-anim" : ""}`}
       onMouseOver={() => tl.play()}
       onMouseLeave={() => tl.reverse()}
     >
