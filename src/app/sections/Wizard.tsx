@@ -11,6 +11,7 @@ import Image, { StaticImageData } from "next/image";
 import React from "react";
 import WizardItem from "../components/WizardItem";
 import { useGSAP } from "@gsap/react";
+import BgGrid from "../components/BgGrid";
 
 export type Item = {
   icon: StaticImageData;
@@ -78,6 +79,7 @@ export default function Wizard() {
 
   return (
     <div id="wizard">
+      <BgGrid />
       <div className="highlight highlight-red"></div>
       <h1 ref={header} className="section-title">
         <span>

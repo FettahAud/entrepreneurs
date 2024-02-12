@@ -1,3 +1,4 @@
+import BgGrid from "../components/BgGrid";
 import Faq from "../components/Faq";
 import { FAQType } from "../components/Faq";
 
@@ -62,6 +63,7 @@ export default function FAQs() {
 
   return (
     <div id="faq">
+      <BgGrid />
       <div className="highlight highlight-red"></div>
       <h1 className="section-title">
         <span>Questions</span>

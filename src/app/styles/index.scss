@@ -532,6 +532,7 @@
   #benefit2 {
     padding: var(--top) var(--x);
     min-height: 100vh;
+    position: relative;
     .header {
       .section-title {
         span:last-child div {

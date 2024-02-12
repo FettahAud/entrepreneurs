@@ -7,6 +7,7 @@ import cardBg from "@/../public/card-bg-hover.png";
 import { useEffect, useRef } from "react";
 import RedArrRight from "../components/RedArrRight";
 import { useGSAP } from "@gsap/react";
+import BgGrid from "../components/BgGrid";
 
 type Card = {
   title: string;
@@ -233,6 +234,7 @@ export default function Pricing() {
 
   return (
     <div id="pricing">
+      <BgGrid />
       <div className="highlight highlight-red"></div>
       <div ref={header} className="header">
         <div className="small-badge">
