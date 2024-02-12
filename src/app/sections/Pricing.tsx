@@ -88,7 +88,7 @@ export default function Pricing() {
     tl.add("start", 0);
     mm.add("(min-width: 768px)", () => {
       tl.fromTo(
-        header.current.querySelector(".small-badge"),
+        header.current!.querySelector(".small-badge"),
         { y: 150, opacity: 0 },
         { y: 0, opacity: 1 }
         // "start"
@@ -106,7 +106,7 @@ export default function Pricing() {
           // "start+=0.5"
         )
         .fromTo(
-          cardsRef.current?.querySelectorAll(".card"),
+          cardsRef.current!.querySelectorAll(".card"),
           {
             y: 200,
             opacity: 0,
@@ -121,7 +121,7 @@ export default function Pricing() {
         )
         .fromTo(
           gsap.utils.toArray(
-            cardsRef.current?.querySelectorAll(".card .price .price-number.to")
+            cardsRef.current!.querySelectorAll(".card .price .price-number.to")
           ), // select the price element
           {
             innerText: 0,
@@ -137,7 +137,7 @@ export default function Pricing() {
         )
         .fromTo(
           gsap.utils.toArray(
-            cardsRef.current?.querySelectorAll(
+            cardsRef.current!.querySelectorAll(
               ".card .price .price-number.from"
             )
           ), // select the price element
@@ -156,7 +156,7 @@ export default function Pricing() {
     });
     mm.add("(max-width: 768px)", () => {
       tl.fromTo(
-        header.current.querySelector(".small-badge"),
+        header.current!.querySelector(".small-badge"),
         { y: 150, opacity: 0 },
         { y: 0, opacity: 1 }
         // "start"
