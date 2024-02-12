@@ -73,11 +73,12 @@ export default function Pricing() {
         trigger: "#pricing",
         start: "top 80%",
         end: "50% 55%",
-        markers: false,
+        markers: true,
         scrub: true,
         once: true,
       },
     });
+    const mm = gsap.matchMedia();
     const split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {
       type: "words",
     });
@@ -85,70 +86,149 @@ export default function Pricing() {
       type: "words",
     });
     tl.add("start", 0);
-    tl.fromTo(
-      header.current.querySelector(".small-badge"),
-      { y: 150, opacity: 0 },
-      { y: 0, opacity: 1 }
-      // "start"
-    )
-      .fromTo(
-        split1.words,
-        { y: 150 },
-        { y: 0, stagger: 0.1 }
-        // "start+=.3"
+    mm.add("(min-width: 768px)", () => {
+      tl.fromTo(
+        header.current.querySelector(".small-badge"),
+        { y: 150, opacity: 0 },
+        { y: 0, opacity: 1 }
+        // "start"
       )
-      .fromTo(
-        split2.words,
-        { opacity: 0 },
-        { opacity: 1, stagger: 0.05 }
-        // "start+=0.5"
+        .fromTo(
+          split1.words,
+          { y: 150 },
+          { y: 0, stagger: 0.1 }
+          // "start+=.3"
+        )
+        .fromTo(
+          split2.words,
+          { opacity: 0 },
+          { opacity: 1, stagger: 0.05 }
+          // "start+=0.5"
+        )
+        .fromTo(
+          cardsRef.current?.querySelectorAll(".card"),
+          {
+            y: 200,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            // duration: 2,
+          }
+          // "start+=.3"
+        )
+        .fromTo(
+          gsap.utils.toArray(
+            cardsRef.current?.querySelectorAll(".card .price .price-number.to")
+          ), // select the price element
+          {
+            innerText: 0,
+          },
+          {
+            innerText: (i: number) => cards[i].price?.to,
+            roundProps: "innerText",
+            ease: "none",
+            duration: 1,
+            stagger: 0.2,
+          }
+          // "start+=.35"
+        )
+        .fromTo(
+          gsap.utils.toArray(
+            cardsRef.current?.querySelectorAll(
+              ".card .price .price-number.from"
+            )
+          ), // select the price element
+          {
+            innerText: 0,
+          },
+          {
+            innerText: (i: number) => cards[i].price?.from,
+            roundProps: "innerText", // round to the nearest integer
+            ease: "none", // linear animation
+            duration: 1, // duration of the animation
+            stagger: 0.2, // stagger the animation
+          }
+          // "start+=1.5"
+        );
+    });
+    mm.add("(max-width: 768px)", () => {
+      tl.fromTo(
+        header.current.querySelector(".small-badge"),
+        { y: 150, opacity: 0 },
+        { y: 0, opacity: 1 }
+        // "start"
       )
-      .fromTo(
-        cardsRef.current?.querySelectorAll(".card"),
-        {
-          y: 200,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.2,
-          // duration: 2,
-        }
-        // "start+=.3"
-      )
-      .fromTo(
-        gsap.utils.toArray(
-          cardsRef.current?.querySelectorAll(".card .price .price-number.to")
-        ), // select the price element
-        {
-          innerText: 0,
-        },
-        {
-          innerText: (i: number) => cards[i].price?.to,
-          roundProps: "innerText",
-          ease: "none",
-          duration: 1,
-          stagger: 0.2,
-        }
-        // "start+=.35"
-      )
-      .fromTo(
-        gsap.utils.toArray(
-          cardsRef.current?.querySelectorAll(".card .price .price-number.from")
-        ), // select the price element
-        {
-          innerText: 0,
-        },
-        {
-          innerText: (i: number) => cards[i].price?.from,
-          roundProps: "innerText", // round to the nearest integer
-          ease: "none", // linear animation
-          duration: 1, // duration of the animation
-          stagger: 0.2, // stagger the animation
-        }
-        // "start+=1.5"
-      );
+        .fromTo(
+          split1.words,
+          { y: 150 },
+          { y: 0, stagger: 0.1 }
+          // "start+=.3"
+        )
+        .fromTo(
+          split2.words,
+          { opacity: 0 },
+          { opacity: 1, stagger: 0.05 }
+          // "start+=0.5"
+        );
+      cardsRef.current?.querySelectorAll(".card").forEach((card) => {
+        const cTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            end: "top 30%",
+            markers: false,
+            scrub: true,
+            once: true,
+          },
+          defaults: {
+            ease: "power4.out",
+          },
+        });
+        cTl.add("start", 0);
+        cTl
+          .fromTo(
+            card,
+            {
+              y: 200,
+              opacity: 0,
+            },
+            {
+              y: 0,
+              opacity: 1,
+            },
+            "start"
+          )
+          .fromTo(
+            card.querySelector(".price .price-number.to"),
+            {
+              innerText: 0,
+            },
+            {
+              innerText: (i: number) => cards[i].price?.to,
+              roundProps: "innerText",
+              ease: "none",
+              duration: 1,
+            },
+            "start+=.35"
+          )
+          .fromTo(
+            card.querySelector(".price .price-number.from"),
+            {
+              innerText: 0,
+            },
+            {
+              innerText: (i: number) => cards[i].price?.from,
+              roundProps: "innerText",
+              ease: "none",
+              duration: 1,
+            },
+            "start+=.5"
+          );
+      });
+    });
   });
 
   return (

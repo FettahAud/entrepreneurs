@@ -939,7 +939,7 @@
       }
     }
     #pricing {
-      margin-bottom: 8rem;
+      margin-bottom: 6rem;
       .header p {
         font-size: 1rem;
       }
@@ -1045,6 +1045,12 @@
           letter-spacing: -0.045rem;
         }
       }
+      .overlay img {
+        opacity: 0;
+      }
+      .highlight-wrapper .bg-gradient {
+        top: -30%;
+      }
       .video-wrapper {
         max-width: unset;
         width: 100%;
@@ -1076,9 +1082,16 @@
           width: 100%;
           padding: 0 var(--x);
         }
+        .highlight {
+          width: 100%;
+          top: -10%;
+          right: -100%;
+          left: unset;
+        }
       }
     }
     #benefits {
+      background-color: unset;
       .header {
         max-width: 19.5rem;
         margin-bottom: 6rem;
@@ -1089,7 +1102,8 @@
       .cards {
         gap: 2rem;
         .card {
-          min-height: 10.625rem;
+          min-height: unset;
+          padding-bottom: 1.9rem;
           img {
             width: 4rem;
             height: 4rem;

@@ -68,13 +68,13 @@ export default function Header() {
           {nav.map((item) => (
             <li
               key={item.id}
-              className={item.subNav && "sub-nav-wrapper active"}
-              // onClick={(e) =>
-              //   item.subNav && e.currentTarget.classList.toggle("active")
-              // }
-              // onBlur={(e) =>
-              //   item.subNav && e.currentTarget.classList.remove("active")
-              // }
+              className={item.subNav && "sub-nav-wrapper"}
+              onClick={(e) =>
+                item.subNav && e.currentTarget.classList.toggle("active")
+              }
+              onBlur={(e) =>
+                item.subNav && e.currentTarget.classList.remove("active")
+              }
             >
               <Link href={item.href}>{item.name}</Link>
               {item.subNav && (
