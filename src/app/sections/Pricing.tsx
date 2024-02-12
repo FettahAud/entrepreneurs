@@ -73,7 +73,7 @@ export default function Pricing() {
         trigger: "#pricing",
         start: "top 80%",
         end: "50% 55%",
-        markers: true,
+        markers: false,
         scrub: true,
         once: true,
       },
