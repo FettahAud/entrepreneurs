@@ -7,7 +7,6 @@ import xTwitter from "@/../public/social-icons/x.svg";
 import tiktok from "@/../public/social-icons/tiktok.svg";
 import youtube from "@/../public/social-icons/youtube.svg";
 import Link from "next/link";
-import BgGrid from "./BgGrid";
 export default function Footer() {
   const lists = [
     {
@@ -53,7 +52,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer">
-        <BgGrid />
+        <img className="bg-grid" src="/footer-bg-grid.svg" alt="" />
         <div className="upper-section">
           <div className="logos">
             <Image src={eFullLogo} alt="" />

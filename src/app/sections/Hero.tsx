@@ -22,7 +22,6 @@ import logo7 from "@/../public/logos/logo-7.png";
 import logo8 from "@/../public/logos/logo-8.png";
 import logo9 from "@/../public/logos/logo-9.png";
 import { useGSAP } from "@gsap/react";
-import BgGrid from "../components/BgGrid";
 
 /**
  * TODO: Fix client-logos image sizes on 375px
@@ -181,7 +180,7 @@ export default function Hero() {
             </linearGradient>
           </defs>
         </svg>
-        <BgGrid />
+        <img className="bg-grid" src="/hero-bg-grid.svg" />
       </div>
       <div className="overlay">
         <Image src={overlay} alt="" />

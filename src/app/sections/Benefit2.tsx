@@ -6,7 +6,6 @@ import arrRight from "@/../public/arrow-right.svg";
 import { useRef } from "react";
 import { BenefitGraph } from "../components/LottieGraphs";
 import { useGSAP } from "@gsap/react";
-import BgGrid from "../components/BgGrid";
 
 // TODO: Find a way to revert split text on animation ends
 
@@ -54,7 +53,7 @@ export default function Benefit2() {
 
   return (
     <div id="benefit2">
-      <BgGrid />
+      <img className="bg-grid" src="/benefit-2-grid.svg" />
       <div ref={header} className="header">
         <div className="small-badge">Nos programmes</div>
         <h1 className="section-title">
