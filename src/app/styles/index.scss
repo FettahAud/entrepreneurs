@@ -1254,7 +1254,7 @@
       }
     }
   }
-  @media screen and (max-width: 390px) {
+  @media (pointer: none) and (pointer: coarse) and (max-width: 420px) {
     #hero {
       padding-bottom: 0;
       .highlight-wrapper {
