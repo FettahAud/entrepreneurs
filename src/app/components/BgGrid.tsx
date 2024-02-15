@@ -4,7 +4,13 @@ import Image from "next/image";
 import storeDevice from "../store";
 import { useEffect, useState } from "react";
 
-export default function BGGRid({ images }: { images: string[] }) {
+export default function BGGRid({
+  images,
+  className,
+}: {
+  images: string[];
+  className?: string;
+}) {
   const { device } = storeDevice();
   const [image, setImage] = useState(images[0]);
   useEffect(() => {
@@ -19,5 +25,5 @@ export default function BGGRid({ images }: { images: string[] }) {
     }
   }, [device, images]);
 
-  return <Image className="bg-grid" src={image} alt="" />;
+  return <Image className={`bg-grid ${className}`} src={image} alt="" />;
 }

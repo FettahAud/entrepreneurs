@@ -245,7 +245,7 @@ export default function Hero() {
       </div>
       <div className="graph">
         <div className="highlight highlight-red"></div>
-        <BGGRid images={grids2} className="bg-grid" />
+        <BGGRid images={grids2} />
         <div className="text-quote">
           Êtes-vous prêt à transformer radicalement votre quotidien et votre vie
           en l&apos;espace de quelques mois,
