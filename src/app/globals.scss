@@ -831,7 +831,7 @@ li {
     }
   }
 }
-@media screen and (max-width: 375px) {
+@media (pointer: none) and (pointer: coarse) and (max-width: 420px) {
   :root {
     --x: 1.9rem;
   }

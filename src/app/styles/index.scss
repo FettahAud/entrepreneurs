@@ -988,8 +988,12 @@
       justify-content: space-between;
       gap: unset;
       margin-top: 1.25rem;
-      .graph {
+      .benefit-2-graph {
         width: 46.75rem;
+        height: 42rem;
+      }
+      .buttons {
+        margin-bottom: 9rem;
       }
     }
     #wizard {
@@ -1072,7 +1076,7 @@
         max-width: unset;
         width: 100%;
         padding: 0 var(--x);
-        margin-bottom: 14.2rem;
+        margin-bottom: 13.7rem;
       }
       .graph {
         margin-bottom: 0;
@@ -1088,6 +1092,9 @@
           top: -10%;
           right: -100%;
           left: unset;
+        }
+        .bg-grid {
+          opacity: 0;
         }
       }
     }
@@ -1192,6 +1199,13 @@
         flex-direction: column;
         align-items: flex-start;
         margin-top: 4.3rem;
+        .benefit-2-graph {
+          width: 100%;
+          height: 35.17788rem;
+        }
+      }
+      .buttons {
+        margin-bottom: unset;
       }
     }
     #wizard {
@@ -1240,7 +1254,7 @@
       }
     }
   }
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 390px) {
     #hero {
       padding-bottom: 0;
       .highlight-wrapper {

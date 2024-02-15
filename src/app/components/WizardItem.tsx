@@ -26,8 +26,8 @@ export default function WizardItem({
       tlRef.current = gsap.timeline({
         scrollTrigger: {
           trigger: itemRef.current,
-          start: "top 65%",
-          end: "bottom 65%",
+          start: "top 50%",
+          end: "bottom 50%",
           markers: false,
           onEnter: () => {
             numbers![index]?.classList.add("current");
@@ -48,9 +48,6 @@ export default function WizardItem({
         },
       });
     }
-    return () => {
-      tlRef.current?.kill();
-    };
   });
   return (
     <div ref={itemRef} className={`item ${index % 2 ? "even" : "odd"}`}>

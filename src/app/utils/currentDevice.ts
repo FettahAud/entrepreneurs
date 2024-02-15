@@ -3,8 +3,8 @@ const getDevice = () => {
     return { device: "server", breakpoint: Infinity };
   }
 
-  if (window.innerWidth <= 375) {
-    return { device: "mobile", breakpoint: 375 };
+  if (window.innerWidth <= 390) {
+    return { device: "mobile", breakpoint: 390 };
   } else if (window.innerWidth <= 768) {
     return { device: "tablet", breakpoint: 768 };
   } else if (window.innerWidth <= 1280) {

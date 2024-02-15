@@ -32,6 +32,7 @@ const BenefitGraph = () => {
     loop: false,
     autoplay: false,
     animationData: graph2,
+    className: "benefit-2-graph",
   });
   const Animation = useLottieInteractivity({
     lottieObj,
