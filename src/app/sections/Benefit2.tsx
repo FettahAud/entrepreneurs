@@ -7,9 +7,16 @@ import { useRef } from "react";
 import { BenefitGraph } from "../components/LottieGraphs";
 import { useGSAP } from "@gsap/react";
 
+import gridDesktop from "@/../public/sections-grids/benefit/bg-grid-1920.svg";
+import gridLaptop from "@/../public/sections-grids/benefit/bg-grid-1280.svg";
+import gridTablet from "@/../public/sections-grids/benefit/bg-grid-768.svg";
+import gridMobile from "@/../public/sections-grids/benefit/bg-grid-375.svg";
+import BGGRid from "../components/BgGrid";
+
 // TODO: Find a way to revert split text on animation ends
 
 export default function Benefit2() {
+  const grids = [gridDesktop, gridLaptop, gridTablet, gridMobile];
   const header = useRef<HTMLDivElement>(null);
   const buttons = useRef<HTMLDivElement>(null);
 
@@ -53,7 +60,7 @@ export default function Benefit2() {
 
   return (
     <div id="benefit2">
-      <img className="bg-grid" src="/benefit-2-grid.svg" />
+      <BGGRid images={grids} />
       <div ref={header} className="header">
         <div className="small-badge">Nos programmes</div>
         <h1 className="section-title">

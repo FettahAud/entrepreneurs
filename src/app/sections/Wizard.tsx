@@ -7,10 +7,16 @@ import icon2 from "@/../public/icons/Icon-7.png";
 import icon3 from "@/../public/icons/Icon-1.png";
 import icon4 from "@/../public/icons/Icon-2.png";
 import icon5 from "@/../public/icons/Icon-3.png";
+import gridDesktop from "@/../public/sections-grids/wizard/bg-grid-1920.svg";
+import gridLaptop from "@/../public/sections-grids/wizard/bg-grid-1280.svg";
+import gridTablet from "@/../public/sections-grids/wizard/bg-grid-768.svg";
+import gridMobile from "@/../public/sections-grids/wizard/bg-grid-375.svg";
+
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import WizardItem from "../components/WizardItem";
 import { useGSAP } from "@gsap/react";
+import BGGRid from "../components/BgGrid";
 
 export type Item = {
   icon: StaticImageData;
@@ -20,7 +26,9 @@ export type Item = {
 };
 
 export default function Wizard() {
+  const grids = [gridDesktop, gridLaptop, gridTablet, gridMobile];
   const header = useRef<HTMLDivElement>(null);
+  const wizard = useRef<HTMLDivElement>(null);
 
   const items: Item[] = [
     {
@@ -57,15 +65,15 @@ export default function Wizard() {
   ];
 
   useGSAP(() => {
-    if (!header.current) return;
+    if (!header.current || !wizard.current) return;
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#wizard",
+        trigger: wizard.current,
         start: "top 80%",
         end: "20% 80%",
         markers: false,
         scrub: true,
-        // once: true,
+        once: true,
       },
     });
     const split1 = new SplitText(header.current?.querySelectorAll("span"), {
@@ -77,8 +85,8 @@ export default function Wizard() {
   }, []);
 
   return (
-    <div id="wizard">
-      <img className="bg-grid" src="/wizard-bg-grid.svg" />
+    <div id="wizard" ref={wizard}>
+      <BGGRid images={grids} />
       <div className="highlight highlight-red"></div>
       <h1 ref={header} className="section-title">
         <span>

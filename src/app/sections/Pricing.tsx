@@ -1,12 +1,17 @@
 "use client";
 
-import { gsap, ScrollTrigger, SplitText } from "../utils/gsap";
+import { gsap, SplitText } from "../utils/gsap";
 import Image from "next/image";
-import arrRight from "@/../public/arrow-right.svg";
 import cardBg from "@/../public/card-bg-hover.png";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import RedArrRight from "../components/RedArrRight";
 import { useGSAP } from "@gsap/react";
+
+import gridDesktop from "@/../public/sections-grids/pricing/bg-grid-1920.svg";
+import gridLaptop from "@/../public/sections-grids/pricing/bg-grid-1280.svg";
+import gridTablet from "@/../public/sections-grids/pricing/bg-grid-768.svg";
+import gridMobile from "@/../public/sections-grids/pricing/bg-grid-375.svg";
+import BGGRid from "../components/BgGrid";
 
 type Card = {
   title: string;
@@ -62,6 +67,7 @@ export default function Pricing() {
       priceText: "CA démultiplié et exponentiel sur le long terme.",
     },
   ];
+  const grids = [gridDesktop, gridLaptop, gridTablet, gridMobile];
 
   const header = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -233,7 +239,7 @@ export default function Pricing() {
 
   return (
     <div id="pricing">
-      <img className="bg-grid" src="/pricing-grid.svg" />
+      <BGGRid images={grids} />
       <div className="highlight highlight-red"></div>
       <div ref={header} className="header">
         <div className="small-badge">

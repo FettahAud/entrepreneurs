@@ -1,7 +1,13 @@
 import Faq from "../components/Faq";
 import { FAQType } from "../components/Faq";
+import gridDesktop from "@/../public/sections-grids/faq/bg-grid-1920.svg";
+import gridLaptop from "@/../public/sections-grids/faq/bg-grid-1280.svg";
+import gridTablet from "@/../public/sections-grids/faq/bg-grid-768.svg";
+import gridMobile from "@/../public/sections-grids/faq/bg-grid-375.svg";
+import BGGRid from "../components/BgGrid";
 
 export default function FAQs() {
+  const grids = [gridDesktop, gridLaptop, gridTablet, gridMobile];
   const faqs: FAQType[] = [
     {
       question: "J'ai un business physique, est-ce que vous pouvez m'aider ?",
@@ -62,7 +68,7 @@ export default function FAQs() {
 
   return (
     <div id="faq">
-      <img className="bg-grid" src="/faq-bg-grid.svg" />
+      <BGGRid images={grids} />
       <div className="highlight highlight-red"></div>
       <h1 className="section-title">
         <span>Questions</span>

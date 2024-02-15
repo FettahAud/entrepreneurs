@@ -7,7 +7,14 @@ import xTwitter from "@/../public/social-icons/x.svg";
 import tiktok from "@/../public/social-icons/tiktok.svg";
 import youtube from "@/../public/social-icons/youtube.svg";
 import Link from "next/link";
+import gridDesktop from "@/../public/sections-grids/footer/bg-grid-1920.svg";
+import gridLaptop from "@/../public/sections-grids/footer/bg-grid-1280.svg";
+import gridTablet from "@/../public/sections-grids/footer/bg-grid-768.svg";
+import gridMobile from "@/../public/sections-grids/footer/bg-grid-375.svg";
+import BGGRid from "./BgGrid";
+
 export default function Footer() {
+  const grids = [gridDesktop, gridLaptop, gridTablet, gridMobile];
   const lists = [
     {
       title: "Plan du site",
@@ -52,7 +59,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer">
-        <img className="bg-grid" src="/footer-bg-grid.svg" alt="" />
+        <BGGRid images={grids} />
         <div className="upper-section">
           <div className="logos">
             <Image src={eFullLogo} alt="" />

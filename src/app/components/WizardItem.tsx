@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "../utils/gsap";
 import { Item } from "../sections/Wizard";
+import { useGSAP } from "@gsap/react";
 
 export default function WizardItem({
   item,
@@ -14,7 +15,7 @@ export default function WizardItem({
 }) {
   const itemRef = useRef<HTMLDivElement>(null);
   const tlRef = useRef<gsap.core.Timeline | null>();
-  useEffect(() => {
+  useGSAP(() => {
     if (itemRef.current !== null) {
       const numbers =
         itemRef.current?.parentElement?.querySelectorAll(".number");

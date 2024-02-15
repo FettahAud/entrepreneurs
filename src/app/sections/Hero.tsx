@@ -21,7 +21,16 @@ import logo6 from "@/../public/logos/logo-6.png";
 import logo7 from "@/../public/logos/logo-7.png";
 import logo8 from "@/../public/logos/logo-8.png";
 import logo9 from "@/../public/logos/logo-9.png";
+import gridDesktop1 from "@/../public/sections-grids/hero/bg-grid-1920-1.svg";
+import gridDesktop2 from "@/../public/sections-grids/hero/bg-grid-1920-2.svg";
+import gridLaptop1 from "@/../public/sections-grids/hero/bg-grid-1280-1.svg";
+import gridLaptop2 from "@/../public/sections-grids/hero/bg-grid-1280-2.svg";
+import gridTablet1 from "@/../public/sections-grids/hero/bg-grid-768-1.svg";
+import gridTablet2 from "@/../public/sections-grids/hero/bg-grid-768-2.svg";
+import gridMobile1 from "@/../public/sections-grids/hero/bg-grid-375-1.svg";
+// import gridMobile2 from "@/../public/sections-grids/hero/bg-grid-375-2.svg";
 import { useGSAP } from "@gsap/react";
+import BGGRid from "../components/BgGrid";
 
 /**
  * TODO: Fix client-logos image sizes on 375px
@@ -32,6 +41,8 @@ export default function Hero() {
   const header = useRef<HTMLDivElement>(null);
   const [videoState, setVideoState] = useState(false);
   const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
+  const grids1 = [gridDesktop1, gridLaptop1, gridTablet1, gridMobile1];
+  const grids2 = [gridDesktop2, gridLaptop2, gridTablet2];
 
   const handleVideoState = () => {
     if (video.current?.paused) {
@@ -180,10 +191,7 @@ export default function Hero() {
             </linearGradient>
           </defs>
         </svg>
-        <img className="bg-grid" src="/hero-bg-grid.svg" />
-      </div>
-      <div className="overlay">
-        <Image src={overlay} alt="" />
+        <BGGRid images={grids1} />
       </div>
       <div className="header" ref={header}>
         <div className="badge">
@@ -237,6 +245,7 @@ export default function Hero() {
       </div>
       <div className="graph">
         <div className="highlight highlight-red"></div>
+        <BGGRid images={grids2} className="bg-grid" />
         <div className="text-quote">
           Êtes-vous prêt à transformer radicalement votre quotidien et votre vie
           en l&apos;espace de quelques mois,

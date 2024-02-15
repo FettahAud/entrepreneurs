@@ -39,26 +39,15 @@
         top: 0;
         transform: translateX(-50%);
       }
-    }
-    .overlay {
-      width: 100%;
-      height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      user-select: none;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .bg-grid {
+        position: unset;
       }
     }
     .header {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 7.62rem 0 4.94rem;
+      padding: 11.38rem 0 4.94rem;
       .badge {
         padding: 0.75rem 1rem;
         border-radius: 1.875rem;
@@ -621,7 +610,7 @@
       left: 50%;
       top: 0;
       transition: top 1s var(--cubic-bezier);
-      opacity: 0.3;
+      opacity: 0.2;
     }
     .section-title {
       margin: 0 auto 8.44rem;
@@ -840,6 +829,9 @@
       top: 0;
       left: 0;
     }
+    .bg-grid {
+      // height: 100%;
+    }
     .faqs-wrapper {
       display: flex;
       flex-direction: column;
@@ -923,6 +915,7 @@
     #benefits {
       height: unset;
       min-height: 100vh;
+      justify-content: unset;
       .header {
         max-width: 29.25rem;
         margin-bottom: 15.125rem;
@@ -936,11 +929,16 @@
       }
       .letter-e {
         height: 100vh;
-        top: unset;
+        top: 0;
+        max-width: 40rem;
       }
     }
     #pricing {
       margin-bottom: 6rem;
+      .bg-grid {
+        height: 100%;
+        object-fit: cover;
+      }
       .header p {
         font-size: 1rem;
       }
@@ -953,7 +951,7 @@
             gap: 1.725rem;
             h1 {
               font-size: 1.5rem;
-              line-height: 100%;
+              line-height: 115%;
             }
             p {
               font-size: 0.875rem;
@@ -1046,11 +1044,13 @@
           letter-spacing: -0.045rem;
         }
       }
-      .overlay img {
-        opacity: 0;
-      }
-      .highlight-wrapper .bg-gradient {
-        top: -30%;
+      .highlight-wrapper {
+        .bg-gradient {
+          top: -30%;
+        }
+        .bg-grid {
+          object-fit: cover;
+        }
       }
       .video-wrapper {
         max-width: unset;
@@ -1093,6 +1093,7 @@
     }
     #benefits {
       background-color: unset;
+      min-height: unset;
       .header {
         max-width: 19.5rem;
         margin-bottom: 6rem;
@@ -1123,6 +1124,10 @@
     #pricing {
       gap: 3.9rem;
       margin-bottom: 0;
+      .bg-grid {
+        height: unset;
+        object-fit: unset;
+      }
       .header {
         p {
           font-size: 0.875rem;
@@ -1182,6 +1187,7 @@
       }
     }
     #benefit2 {
+      overflow: hidden;
       .body {
         flex-direction: column;
         align-items: flex-start;
@@ -1228,6 +1234,7 @@
     #faq {
       flex-direction: column;
       gap: 2rem;
+      padding: 4rem 2.6rem;
       .faqs-wrapper .faq-item .faq .question {
         font-size: 1rem;
       }
