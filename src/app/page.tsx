@@ -9,8 +9,8 @@ import Pricing from "@/app/sections/Pricing";
 import Benefit2 from "@/app/sections/Benefit2";
 import Wizard from "@/app/sections/Wizard";
 import FAQs from "@/app/sections/FAQs";
-import handleResize from "./utils/currentDevice";
-import storeDevice from "./store";
+import { handleResize } from "./utils/currentDevice";
+import storeDevice from "./utils/store";
 // import screenSizer from "./utils/currentDevice";
 
 export default function Home() {

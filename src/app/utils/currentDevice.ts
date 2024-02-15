@@ -1,4 +1,8 @@
 const getDevice = () => {
+  if (typeof window === "undefined") {
+    return { device: "server", breakpoint: Infinity };
+  }
+
   if (window.innerWidth <= 375) {
     return { device: "mobile", breakpoint: 375 };
   } else if (window.innerWidth <= 768) {
@@ -19,5 +23,4 @@ const handleResize = () => {
   }
   return device;
 };
-export { device };
-export default handleResize;
+export { handleResize, device };

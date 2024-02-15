@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { device } from "./utils/currentDevice";
+import { device } from "./currentDevice";
 type Store = {
   device: string;
   setDevice: (device: string) => void;

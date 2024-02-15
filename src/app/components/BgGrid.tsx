@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import storeDevice from "../store";
+import storeDevice from "../utils/store";
 import { useEffect, useState } from "react";
 
 export default function BGGRid({
