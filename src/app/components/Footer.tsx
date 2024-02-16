@@ -1,3 +1,5 @@
+"use client";
+
 import DoubleBut from "@/app/components/DoubleBut";
 import eFullLogo from "@/../public/e-full-logo.svg";
 import Image from "next/image";
@@ -12,6 +14,7 @@ import gridLaptop from "@/../public/sections-grids/footer/bg-grid-1280.svg";
 import gridTablet from "@/../public/sections-grids/footer/bg-grid-768.svg";
 import gridMobile from "@/../public/sections-grids/footer/bg-grid-375.svg";
 import BGGRid from "./BgGrid";
+import storeDevice from "../utils/store";
 
 export default function Footer() {
   const grids = [gridDesktop, gridLaptop, gridTablet, gridMobile];
@@ -38,6 +41,7 @@ export default function Footer() {
       ],
     },
   ];
+  const { device } = storeDevice();
   return (
     <footer id="footer">
       <div className="highlight highlight-red"></div>
@@ -93,29 +97,67 @@ export default function Footer() {
           </div>
         </div>
         <div className="copyright">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="375"
-            height="2"
-            viewBox="0 0 375 2"
-            fill="none"
-          >
-            <path d="M0 1H375" stroke="url(#paint0_linear_1832_2186)" />
-            <defs>
-              <linearGradient
-                id="paint0_linear_1832_2186"
-                x1="0"
-                y1="1"
-                x2="375"
-                y2="1"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="white" stop-opacity="0" />
-                <stop offset="0.532909" stop-color="white" stop-opacity="0.4" />
-                <stop offset="1" stop-color="white" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
+          {device === "mobile" && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="375"
+              height="2"
+              viewBox="0 0 375 2"
+              fill="none"
+            >
+              <path d="M0 1H375" stroke="url(#paint0_linear_1832_2186)" />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1832_2186"
+                  x1="0"
+                  y1="1"
+                  x2="375"
+                  y2="1"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" stop-opacity="0" />
+                  <stop
+                    offset="0.532909"
+                    stop-color="white"
+                    stop-opacity="0.4"
+                  />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          )}
+          {device === "desktop" && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1281"
+              height="2"
+              viewBox="0 0 1281 2"
+              fill="none"
+            >
+              <path
+                d="M0.556152 0.916992H1920.56"
+                stroke="url(#paint0_linear_1801_1581)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1801_1581"
+                  x1="0.556152"
+                  y1="0.916992"
+                  x2="1920.56"
+                  y2="0.916992"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" stop-opacity="0" />
+                  <stop
+                    offset="0.532909"
+                    stop-color="white"
+                    stop-opacity="0.4"
+                  />
+                  <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          )}
           <p>
             ARIES Consulting FZCO, Dubai Silicon Oasis, DDP Building A2
             <br />

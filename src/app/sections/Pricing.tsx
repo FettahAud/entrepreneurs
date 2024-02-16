@@ -84,7 +84,7 @@ export default function Pricing() {
       type: "words",
     });
     tl.add("start", 0);
-    mm.add("(min-width: 768px)", () => {
+    mm.add("(min-width: 769px)", () => {
       ScrollTrigger.create({
         trigger: "#pricing",
         start: "top 80%",
@@ -190,7 +190,7 @@ export default function Pricing() {
           { opacity: 1, stagger: 0.05 }
           // "start+=0.5"
         );
-      cardsRef.current?.querySelectorAll(".card").forEach((card) => {
+      cardsRef.current?.querySelectorAll(".card").forEach((card, index) => {
         const cTl = gsap.timeline({
           scrollTrigger: {
             trigger: card,
@@ -224,7 +224,7 @@ export default function Pricing() {
               innerText: 0,
             },
             {
-              innerText: (i: number) => cards[i].price?.to,
+              innerText: () => cards[index].price?.to,
               roundProps: "innerText",
               ease: "none",
               duration: 1,
@@ -237,7 +237,7 @@ export default function Pricing() {
               innerText: 0,
             },
             {
-              innerText: (i: number) => cards[i].price?.from,
+              innerText: () => cards[index].price?.from,
               roundProps: "innerText",
               ease: "none",
               duration: 1,

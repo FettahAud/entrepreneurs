@@ -125,7 +125,7 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      {/* <div ref={mobileNav} className="mobile-nav">
+      <div ref={mobileNav} className="mobile-nav">
         <div className="grid">
           <img src="/Grid.png" alt="" />
         </div>
@@ -193,7 +193,7 @@ export default function Header() {
             </li>
           </ul>
         </div>
-      </div> */}
+      </div>
       <StarBut text="Réserver un Appel" />
     </header>
   );

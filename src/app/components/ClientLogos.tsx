@@ -28,8 +28,8 @@ export default function ClientLogos() {
   }, []);
 
   useEffect(() => {
-    console.log(device);
-    if (device === "desktop") setGsp("3.84rem");
+    if (device === "desktop" || device === "laptop" || device === "tablet")
+      setGsp("3.84rem");
     if (device === "mobile") setGsp("2rem");
   }, [device]);
 

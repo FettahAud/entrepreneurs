@@ -29,5 +29,7 @@ export default function BGGRid({
     }
   }, [device, images]);
 
-  return <Image className={`bg-grid ${className}`} src={image} alt="" />;
+  return (
+    image && <Image className={`bg-grid ${className}`} src={image} alt="" />
+  );
 }
