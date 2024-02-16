@@ -1,7 +1,9 @@
 "use client";
 
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
+
+// @ts-ignore
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import logo1 from "@/../public/logos/logo-1.svg";
 import logo2 from "@/../public/logos/logo-2.svg";

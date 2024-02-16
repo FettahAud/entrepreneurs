@@ -1,10 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { ReactSVG } from "react-svg";
-import { useEffect, useRef, useState } from "react";
-// @ts-ignore
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useRef, useState } from "react";
 import { gsap, SplitText } from "../utils/gsap";
 
 import "@splidejs/react-splide/css";
