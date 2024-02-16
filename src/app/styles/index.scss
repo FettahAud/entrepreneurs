@@ -296,8 +296,7 @@
           object-fit: cover;
           transform-origin: left;
         }
-        h2,
-        h2 div {
+        h2 {
           font-size: 1.5rem;
           font-weight: 500;
           line-height: 120%; /* 1.8rem */
@@ -306,6 +305,15 @@
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          div {
+            font-size: inherit;
+            background: linear-gradient(180deg, #ffe6e6 26.6%, #c8aeae 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: inherit;
+            font-weight: inherit;
+          }
         }
         .border-line {
           width: 100%;
@@ -923,8 +931,7 @@
           font-size: 0.875rem;
         }
       }
-      .cards .card h2,
-      .cards .card h2 div {
+      .cards .card h2 {
         font-size: 1.1875rem;
       }
       .letter-e {
@@ -1254,14 +1261,22 @@
       }
     }
   }
-  @media (pointer: none) and (pointer: coarse) and (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     #hero {
       padding-bottom: 0;
       .highlight-wrapper {
-        display: none;
+        height: 100%;
+        div,
+        svg {
+          display: none;
+        }
+        img {
+          height: 100%;
+          object-fit: unset;
+        }
       }
       .header {
-        padding: 6.3rem 1.25rem 2.2rem;
+        padding: 6.3rem 1.5rem 3rem;
         .badge {
           font-size: 0.75rem;
           line-height: 110%;
@@ -1311,11 +1326,18 @@
       }
     }
     #benefits {
-      padding: 2.5rem var(--x) 3rem;
+      padding: 7.5rem var(--x) 3rem;
+      .header {
+        margin-bottom: 3.5rem;
+        h1 {
+          margin-bottom: 2rem;
+        }
+      }
       .letter-e {
-        width: 11.61256rem;
+        width: max-content;
         height: 16.875rem;
-        top: 0;
+        top: 2.5rem;
+        right: 0;
       }
       .highlight {
         bottom: -140px;
@@ -1330,6 +1352,7 @@
           padding-bottom: 1.25rem;
           height: 3.75rem;
           flex-direction: row;
+          align-items: center;
           img {
             width: 2.5rem;
             height: 2.5rem;
@@ -1419,11 +1442,17 @@
       .body {
         margin-top: 2.75rem;
         gap: 2.75rem;
-        .buttons .but {
-          height: 3.25rem;
-          padding: 1.12rem 1.5rem;
-          font-size: 0.875rem;
-          gap: 4rem;
+        .buttons {
+          margin-bottom: 2.75rem;
+          .but {
+            height: 3.25rem;
+            padding: 1.12rem 1.5rem;
+            font-size: 0.875rem;
+            gap: 4rem;
+          }
+        }
+        .benefit-2-graph {
+          height: 18.30906rem;
         }
       }
     }

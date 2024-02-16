@@ -10,7 +10,7 @@ export default function StarBut({ text }: { text: string }) {
       <span>{text}</span>
       <Image className="star-1" src={star1} alt="" />
       <Image className="star-2" src={star2} alt="" />
-      <Image className="star-3" src={star3} alt="" />
+      <Image className="star-3" src={star2} alt="" />
     </div>
   );
 }

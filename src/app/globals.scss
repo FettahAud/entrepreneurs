@@ -437,6 +437,11 @@ li {
       bottom: -9px;
       right: 20px;
     }
+    &.star-3 {
+      top: 2%;
+      right: -4px;
+      scale: 0.6;
+    }
   }
 }
 
@@ -965,9 +970,11 @@ li {
         opacity: 1;
       }
     }
-    // &:has(.mobile-nav.active) {
-
-    // }
+    .client-logos .splide__slide img {
+      max-width: 60%;
+      max-height: 100px;
+      object-fit: contain;
+    }
     > nav {
       display: none;
     }
@@ -977,15 +984,23 @@ li {
   }
   #footer {
     padding-top: 0;
+    .highlight {
+      opacity: 0;
+    }
     .header {
       padding: 3rem 2rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
       .text-wrapper p {
         font-size: 0.75rem;
         line-height: 140%;
       }
     }
     .footer {
+      padding-left: 2rem;
+      padding-right: 2rem;
       .upper-section {
+        padding-top: 3rem;
         .logos {
           flex-direction: column;
           height: 5.5rem;

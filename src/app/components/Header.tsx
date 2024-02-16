@@ -39,11 +39,11 @@ export default function Header() {
   const handleMobileMenu = () => {
     mobileNav.current!.classList.toggle("active");
     setState(!state);
-    if (state) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    // if (state) {
+    //   document.body.style.overflow = "hidden";
+    // } else {
+    //   document.body.style.overflow = "unset";
+    // }
   };
   return (
     <header id="header">
@@ -125,7 +125,7 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      <div ref={mobileNav} className="mobile-nav">
+      {/* <div ref={mobileNav} className="mobile-nav">
         <div className="grid">
           <img src="/Grid.png" alt="" />
         </div>
@@ -193,7 +193,7 @@ export default function Header() {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
       <StarBut text="Réserver un Appel" />
     </header>
   );

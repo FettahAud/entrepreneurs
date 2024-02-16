@@ -1,5 +1,5 @@
 "use client";
-import { gsap, SplitText } from "../utils/gsap";
+import { gsap, SplitText, ScrollTrigger } from "../utils/gsap";
 import { useEffect, useRef } from "react";
 
 import icon1 from "@/../public/icons/Icon-8.png";
@@ -66,15 +66,29 @@ export default function Wizard() {
 
   useGSAP(() => {
     if (!header.current || !wizard.current) return;
-    const tl = gsap.timeline({
-      scrollTrigger: {
+    const mm = gsap.matchMedia();
+    const tl = gsap.timeline();
+    mm.add("(min-width: 420px)", () => {
+      ScrollTrigger.create({
         trigger: wizard.current,
         start: "top 80%",
         end: "20% 80%",
         markers: false,
         scrub: true,
         once: true,
-      },
+        animation: tl,
+      });
+    });
+    mm.add("(max-width: 420px)", () => {
+      ScrollTrigger.create({
+        trigger: wizard.current,
+        start: "top 100%",
+        end: "20% 90%",
+        markers: false,
+        scrub: true,
+        once: true,
+        animation: tl,
+      });
     });
     const split1 = new SplitText(header.current?.querySelectorAll("span"), {
       type: "lines,words",
@@ -82,7 +96,7 @@ export default function Wizard() {
 
     tl.add("start", 0);
     tl.fromTo(split1.words, { y: 100 }, { y: 0, stagger: 0.05 }, "0");
-  }, []);
+  });
 
   return (
     <div id="wizard" ref={wizard}>

@@ -11,26 +11,17 @@ import "@splidejs/react-splide/css";
 
 import DoubleBut from "@/app/components/DoubleBut";
 import { HeroGraph } from "../components/LottieGraphs";
-import overlay from "@/../public/overlay.png";
-import logo1 from "@/../public/logos/logo-1.png";
-import logo2 from "@/../public/logos/logo-2.png";
-import logo3 from "@/../public/logos/logo-3.png";
-import logo4 from "@/../public/logos/logo-4.png";
-import logo5 from "@/../public/logos/logo-5.png";
-import logo6 from "@/../public/logos/logo-6.png";
-import logo7 from "@/../public/logos/logo-7.png";
-import logo8 from "@/../public/logos/logo-8.png";
-import logo9 from "@/../public/logos/logo-9.png";
 import gridDesktop1 from "@/../public/sections-grids/hero/bg-grid-1920-1.svg";
 import gridDesktop2 from "@/../public/sections-grids/hero/bg-grid-1920-2.svg";
 import gridLaptop1 from "@/../public/sections-grids/hero/bg-grid-1280-1.svg";
 import gridLaptop2 from "@/../public/sections-grids/hero/bg-grid-1280-2.svg";
 import gridTablet1 from "@/../public/sections-grids/hero/bg-grid-768-1.svg";
 import gridTablet2 from "@/../public/sections-grids/hero/bg-grid-768-2.svg";
-import gridMobile1 from "@/../public/sections-grids/hero/bg-grid-375-1.svg";
+import gridMobile1 from "@/../public/sections-grids/hero/bg-grid-375.svg";
 // import gridMobile2 from "@/../public/sections-grids/hero/bg-grid-375-2.svg";
 import { useGSAP } from "@gsap/react";
 import BGGRid from "../components/BgGrid";
+import ClientLogos from "../components/ClientLogos";
 
 /**
  * TODO: Fix client-logos image sizes on 375px
@@ -40,7 +31,6 @@ export default function Hero() {
   const video = useRef<HTMLVideoElement>(null);
   const header = useRef<HTMLDivElement>(null);
   const [videoState, setVideoState] = useState(false);
-  const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
   const grids1 = [gridDesktop1, gridLaptop1, gridTablet1, gridMobile1];
   const grids2 = [gridDesktop2, gridLaptop2, gridTablet2];
 
@@ -220,29 +210,7 @@ export default function Hero() {
           <img src="/play.svg" />
         </div>
       </div>
-      <div className="client-logos">
-        <Splide
-          aria-label="My Favorite Images"
-          options={{
-            pagination: false,
-            arrows: false,
-            autoplay: true,
-            gap: "3.84rem",
-            type: "loop",
-            rewind: true,
-            autoWidth: true,
-            autoPlay: "play",
-            delay: 1000,
-            speed: 1000,
-          }}
-        >
-          {logos.map((logo, index) => (
-            <SplideSlide key={index}>
-              <Image src={logo} alt="" />
-            </SplideSlide>
-          ))}
-        </Splide>
-      </div>
+      <ClientLogos />
       <div className="graph">
         <div className="highlight highlight-red"></div>
         <BGGRid images={grids2} />

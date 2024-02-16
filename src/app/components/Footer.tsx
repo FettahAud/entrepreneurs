@@ -95,24 +95,24 @@ export default function Footer() {
         <div className="copyright">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="1920"
+            width="375"
             height="2"
-            viewBox="0 0 1920 2"
+            viewBox="0 0 375 2"
             fill="none"
           >
-            <path d="M0 1H1920" stroke="url(#paint0_linear_178_3874)" />
+            <path d="M0 1H375" stroke="url(#paint0_linear_1832_2186)" />
             <defs>
               <linearGradient
-                id="paint0_linear_178_3874"
+                id="paint0_linear_1832_2186"
                 x1="0"
                 y1="1"
-                x2="1920"
+                x2="375"
                 y2="1"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="white" stopOpacity="0" />
-                <stop offset="0.532909" stopColor="white" stopOpacity="0.4" />
-                <stop offset="1" stopColor="white" stopOpacity="0" />
+                <stop stop-color="white" stop-opacity="0" />
+                <stop offset="0.532909" stop-color="white" stop-opacity="0.4" />
+                <stop offset="1" stop-color="white" stop-opacity="0" />
               </linearGradient>
             </defs>
           </svg>

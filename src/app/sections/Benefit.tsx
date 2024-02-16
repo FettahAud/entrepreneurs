@@ -18,6 +18,13 @@ export default function Benefit() {
   useGSAP(() => {
     if (!header.current || !cards.current) return;
 
+    const split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {
+      type: "words",
+    });
+    const split2 = new SplitText(header.current?.querySelector("p"), {
+      type: "words",
+    });
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#benefits",
@@ -25,14 +32,12 @@ export default function Benefit() {
         markers: false,
         start: "top 70%",
         end: "80% 80%",
-        // once: true,
+        once: true,
       },
-    });
-    const split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {
-      type: "words",
-    });
-    const split2 = new SplitText(header.current?.querySelector("p"), {
-      type: "words",
+      onComplete: () => {
+        split1.revert();
+        split2.revert();
+      },
     });
     const cardSplits = Array.from(
       cards.current?.querySelectorAll(".card h2")

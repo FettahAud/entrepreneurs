@@ -1,6 +1,6 @@
 "use client";
 
-import { gsap, SplitText } from "../utils/gsap";
+import { gsap, SplitText, ScrollTrigger } from "../utils/gsap";
 import Image from "next/image";
 import cardBg from "@/../public/card-bg-hover.png";
 import { useRef } from "react";
@@ -74,16 +74,8 @@ export default function Pricing() {
 
   useGSAP(() => {
     if (!header.current || !cardsRef.current) return;
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#pricing",
-        start: "top 80%",
-        end: "50% 55%",
-        markers: false,
-        scrub: true,
-        once: true,
-      },
-    });
+
+    const tl = gsap.timeline();
     const mm = gsap.matchMedia();
     const split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {
       type: "words",
@@ -93,6 +85,15 @@ export default function Pricing() {
     });
     tl.add("start", 0);
     mm.add("(min-width: 768px)", () => {
+      ScrollTrigger.create({
+        trigger: "#pricing",
+        start: "top 80%",
+        end: "50% 55%",
+        markers: false,
+        scrub: true,
+        once: true,
+        animation: tl,
+      });
       tl.fromTo(
         header.current!.querySelector(".small-badge"),
         { y: 150, opacity: 0 },
@@ -161,6 +162,16 @@ export default function Pricing() {
         );
     });
     mm.add("(max-width: 768px)", () => {
+      ScrollTrigger.create({
+        trigger: "#pricing",
+        start: "top 80%",
+        end: "20% 80%",
+        markers: false,
+        scrub: true,
+        once: true,
+        animation: tl,
+      });
+
       tl.fromTo(
         header.current!.querySelector(".small-badge"),
         { y: 150, opacity: 0 },
@@ -183,8 +194,8 @@ export default function Pricing() {
         const cTl = gsap.timeline({
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
-            end: "top 30%",
+            start: "top 70%",
+            end: "center 70%",
             markers: false,
             scrub: true,
             once: true,
@@ -193,7 +204,6 @@ export default function Pricing() {
             ease: "power4.out",
           },
         });
-        cTl.add("start", 0);
         cTl
           .fromTo(
             card,
@@ -203,9 +213,10 @@ export default function Pricing() {
             },
             {
               y: 0,
+              ease: "power4.out",
+              duration: 1,
               opacity: 1,
-            },
-            "start"
+            }
           )
           .fromTo(
             card.querySelector(".price .price-number.to"),
@@ -218,7 +229,7 @@ export default function Pricing() {
               ease: "none",
               duration: 1,
             },
-            "start+=.35"
+            "+=.3"
           )
           .fromTo(
             card.querySelector(".price .price-number.from"),
@@ -231,7 +242,7 @@ export default function Pricing() {
               ease: "none",
               duration: 1,
             },
-            "start+=.5"
+            "+=.6"
           );
       });
     });

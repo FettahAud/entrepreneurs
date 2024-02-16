@@ -12,7 +12,7 @@ import FAQs from "@/app/sections/FAQs";
 import { handleResize } from "./utils/currentDevice";
 import storeDevice from "./utils/store";
 // import screenSizer from "./utils/currentDevice";
-
+// TODO: fix highlight not visible on on mobile
 export default function Home() {
   const { setDevice } = storeDevice();
 

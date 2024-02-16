@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function BGGRid({
   images,
-  className,
+  className = "",
 }: {
   images: string[];
   className?: string;
@@ -21,7 +21,11 @@ export default function BGGRid({
     } else if (device === "tablet") {
       setImage(images[2]);
     } else {
-      setImage(images[3]);
+      if (images[3]) {
+        setImage(images[3]);
+      } else {
+        setImage("");
+      }
     }
   }, [device, images]);
 
