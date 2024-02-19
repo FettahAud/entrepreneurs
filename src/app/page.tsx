@@ -31,7 +31,7 @@ export default function Home() {
   }, []);
   return (
     <div id="home">
-      {/* <Hero /> */}
+      <Hero />
       <Benefit />
       <Pricing />
       <Benefit2 />
