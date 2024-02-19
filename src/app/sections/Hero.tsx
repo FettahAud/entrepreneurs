@@ -185,7 +185,7 @@ export default function Hero() {
         </div>
         <h1 className="section-title">
           <span>Propulsez l&apos;Entrepreneur que</span>
-          <span>vgous êtes à un niveau supérieur</span>
+          <span>vous êtes à un niveau supérieur</span>
         </h1>
         <p>oeuvrez sereinement vers l&apos;accomplissement de votre mission.</p>
         <DoubleBut text="En savoir plus" disableAnimation={false} />
