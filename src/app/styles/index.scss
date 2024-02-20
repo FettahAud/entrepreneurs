@@ -189,6 +189,7 @@
         top: 2.5%;
         left: 2.5%;
         z-index: 0;
+        pointer-events: none;
       }
     }
     .client-logos {
@@ -1269,11 +1270,6 @@
     }
   }
   @media screen and (max-width: 420px) {
-    img,
-    svg {
-      pointer-events: none;
-      overflow: hidden;
-    }
     #hero {
       padding-bottom: 0;
       .highlight-wrapper {
