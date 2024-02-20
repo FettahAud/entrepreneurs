@@ -1269,6 +1269,11 @@
     }
   }
   @media screen and (max-width: 420px) {
+    img,
+    svg {
+      pointer-events: none;
+      overflow: hidden;
+    }
     #hero {
       padding-bottom: 0;
       .highlight-wrapper {
