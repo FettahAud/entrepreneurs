@@ -12,12 +12,12 @@
 <path d="M-393.256 646.386L374.744 646.386" stroke="white"/>
 <path d="M-393.256 861.813L374.744 861.814" stroke="white"/>
 </g>
-<rect opacity="0.1" width="78.6201" height="216" transform="matrix(-1 0 0 1 222.171 215)" fill="url(#paint0_linear_1927_1858)"/>
+<!-- <rect opacity="0.1" width="78.6201" height="216" transform="matrix(-1 0 0 1 222.171 215)" fill="url(#paint0_linear_1927_1858)"/> -->
 <rect x="572" y="1007.45" width="768" height="215.594" transform="rotate(180 572 1007.45)" fill="url(#paint0_linear_1927_1929)"/>
 
-<g filter="url(#filter0_d_1927_1858)">
+<!-- <g filter="url(#filter0_d_1927_1858)">
 <circle cx="144.5" cy="431.5" r="2" transform="rotate(90 144.5 431.5)" fill="#EE0000"/>
-</g>
+</g> -->
 </g>
 <defs>
 <filter id="filter0_d_1927_1858" x="136.5" y="423.5" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">

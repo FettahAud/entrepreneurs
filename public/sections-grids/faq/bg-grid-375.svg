@@ -15,11 +15,11 @@
 <path d="M-196.103 861.78L571.897 861.78" stroke="white" stroke-width="0.666667"/>
 </g>
 <!-- <rect x="572" y="1007.45" width="768" height="215.594" transform="rotate(180 572 1007.45)" fill="url(#paint0_linear_1927_1929)"/> -->
-<rect opacity="0.1" width="76.8" height="144" transform="matrix(-1 0 0 1 34.4004 143.334)" fill="url(#paint1_linear_1927_1929)"/>
+<!-- <rect opacity="0.1" width="76.8" height="144" transform="matrix(-1 0 0 1 34.4004 143.334)" fill="url(#paint1_linear_1927_1929)"/> -->
 <rect opacity="0.05" width="76.8" height="144" transform="matrix(-1 0 0 1 418 0)" fill="url(#paint2_linear_1927_1929)"/>
-<g filter="url(#filter0_d_1927_1929)">
+<!-- <g filter="url(#filter0_d_1927_1929)">
 <ellipse cx="34.2" cy="287.667" rx="1.33333" ry="0.8" transform="rotate(90 34.2 287.667)" fill="#EE0000"/>
-</g>
+</g> -->
 </g>
 <defs>
 <filter id="filter0_d_1927_1929" x="29.4004" y="282.334" width="9.59961" height="10.667" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">

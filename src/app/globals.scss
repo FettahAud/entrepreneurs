@@ -231,14 +231,15 @@ li {
   }
 }
 
-.bg-grid {
+.bg-grid,
+.bg-animated-grid {
   width: 100%;
   // height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
-  height: max-content;
+  height: 100%;
 }
 #footer {
   position: relative;

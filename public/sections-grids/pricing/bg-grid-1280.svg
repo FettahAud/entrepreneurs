@@ -16,7 +16,7 @@
 </g>
 <rect width="192" height="1160" transform="matrix(-1 0 0 1 1275.56 0.916992)" fill="url(#paint0_linear_1801_978)"/>
 <rect width="1920" height="214" transform="matrix(1 0 0 -1 -644.444 1081.92)" fill="url(#paint1_linear_1801_978)"/>
-<rect opacity="0.1" x="699.556" y="215.917" width="192" height="216" fill="url(#paint2_linear_1801_978)"/>
+<!-- <rect opacity="0.1" x="699.556" y="215.917" width="192" height="216" fill="url(#paint2_linear_1801_978)"/>
 <rect opacity="0.1" x="891.556" y="430.917" width="192" height="216" fill="url(#paint3_linear_1801_978)"/>
 <g filter="url(#filter0_d_1801_978)">
 <circle cx="2" cy="2" r="2" transform="matrix(0 1 1 0 698.056 430.417)" fill="#EE0000"/>
@@ -24,7 +24,7 @@
 <path d="M892.556 835.917V648.917" stroke="url(#paint4_linear_1801_978)"/>
 <g filter="url(#filter1_d_1801_978)">
 <circle cx="2" cy="2" r="2" transform="matrix(0 -1 -1 0 894.556 650.917)" fill="#8A0000"/>
-</g>
+</g> -->
 <defs>
 <filter id="filter0_d_1801_978" x="692.056" y="424.417" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

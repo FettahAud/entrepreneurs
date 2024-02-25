@@ -1,12 +1,13 @@
 import { create } from "zustand";
 import { device } from "./currentDevice";
+type Device = "mobile" | "tablet" | "laptop" | "desktop";
 type Store = {
-  device: string;
-  setDevice: (device: string) => void;
+  device: Device;
+  setDevice: (device: Device) => void;
 };
 const storeDevice = create<Store>((set) => ({
-  device: device,
-  setDevice: (device: string) => set({ device }),
+  device: device as Device,
+  setDevice: (device: Device) => set({ device }),
 }));
 
 export default storeDevice;

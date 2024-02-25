@@ -20,7 +20,7 @@
 <path d="M768.812 1293.59L0.812523 1293.59" stroke="white"/>
 <path d="M768.812 1509.02L0.812523 1509.02" stroke="white"/>
 </g>
-<rect opacity="0.1" x="192.557" y="215.917" width="192" height="216" fill="url(#paint0_linear_1817_1179)"/>
+<!-- <rect opacity="0.1" x="192.557" y="215.917" width="192" height="216" fill="url(#paint0_linear_1817_1179)"/>
 <rect opacity="0.1" x="384.557" y="430.917" width="192" height="216" fill="url(#paint1_linear_1817_1179)"/>
 <g filter="url(#filter0_d_1817_1179)">
 <circle cx="2" cy="2" r="2" transform="matrix(0 1 1 0 191.057 430.417)" fill="#EE0000"/>
@@ -28,7 +28,7 @@
 <path d="M698.557 835.917V648.917" stroke="url(#paint2_linear_1817_1179)"/>
 <g filter="url(#filter1_d_1817_1179)">
 <circle cx="2" cy="2" r="2" transform="matrix(0 -1 -1 0 700.557 650.917)" fill="#8A0000"/>
-</g>
+</g> -->
 <defs>
 <filter id="filter0_d_1817_1179" x="185.057" y="424.417" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

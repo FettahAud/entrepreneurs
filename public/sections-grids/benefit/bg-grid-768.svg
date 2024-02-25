@@ -18,11 +18,11 @@
 <path d="M0.300293 862.731L768.3 862.731" stroke="white"/>
 <path d="M0.300293 1078.16L768.3 1078.16" stroke="white"/>
 </g>
-<rect opacity="0.1" width="78.6201" height="216" transform="matrix(-1 0 0 1 615.728 215.917)" fill="url(#paint0_linear_1817_1386)"/>
-<rect opacity="0.1" width="78.2231" height="216" transform="matrix(-1 0 0 1 309.354 430.917)" fill="url(#paint1_linear_1817_1386)"/>
-<g filter="url(#filter0_d_1817_1386)">
+<!-- <rect opacity="0.1" width="78.6201" height="216" transform="matrix(-1 0 0 1 615.728 215.917)" fill="url(#paint0_linear_1817_1386)"/> -->
+<!-- <rect opacity="0.1" width="78.2231" height="216" transform="matrix(-1 0 0 1 309.354 430.917)" fill="url(#paint1_linear_1817_1386)"/> -->
+<!-- <g filter="url(#filter0_d_1817_1386)">
 <circle cx="538.057" cy="432.417" r="2" transform="rotate(90 538.057 432.417)" fill="#EE0000"/>
-</g>
+</g> -->
 <defs>
 <filter id="filter0_d_1817_1386" x="530.057" y="424.417" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

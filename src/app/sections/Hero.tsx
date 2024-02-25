@@ -6,7 +6,7 @@ import { gsap, SplitText } from "../utils/gsap";
 import "@splidejs/react-splide/css";
 
 import DoubleBut from "@/app/components/DoubleBut";
-import { HeroGraph } from "../components/LottieGraphs";
+import { BGAnimatedLines, HeroGraph } from "../components/LottieGraphs";
 import gridDesktop1 from "@/../public/sections-grids/hero/bg-grid-1920-1.svg";
 import gridDesktop2 from "@/../public/sections-grids/hero/bg-grid-1920-2.svg";
 import gridLaptop1 from "@/../public/sections-grids/hero/bg-grid-1280-1.svg";
@@ -178,6 +178,7 @@ export default function Hero() {
           </defs>
         </svg>
         <BGGRid images={grids1} />
+        {/* <BGAnimatedLines /> */}
       </div>
       <div className="header" ref={header}>
         <div className="badge">
@@ -218,6 +219,7 @@ export default function Hero() {
           vous limiter à sa gestion quotidienne ?
         </div>
         <HeroGraph />
+        {/* <BGAnimatedLines /> */}
       </div>
     </div>
   );
