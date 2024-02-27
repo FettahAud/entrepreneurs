@@ -241,6 +241,9 @@ li {
   pointer-events: none;
   height: 100%;
 }
+.bg-animated-grid {
+  height: max-content;
+}
 #footer {
   position: relative;
   .highlight {

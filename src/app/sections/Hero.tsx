@@ -178,7 +178,7 @@ export default function Hero() {
           </defs>
         </svg>
         <BGGRid images={grids1} />
-        {/* <BGAnimatedLines /> */}
+        <BGAnimatedLines />
       </div>
       <div className="header" ref={header}>
         <div className="badge">
@@ -219,7 +219,7 @@ export default function Hero() {
           vous limiter à sa gestion quotidienne ?
         </div>
         <HeroGraph />
-        {/* <BGAnimatedLines /> */}
+        <BGAnimatedLines />
       </div>
     </div>
   );

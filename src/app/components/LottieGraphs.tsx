@@ -1,3 +1,4 @@
+"use client";
 import { useLottie, useLottieInteractivity } from "lottie-react";
 import Lottie from "lottie-react";
 
@@ -125,6 +126,7 @@ const BGAnimatedLines = () => {
         ? bgLines3
         : bgLines4
     );
+    console.log(device);
   }, [device]);
 
   return <Lottie animationData={animation} className="bg-animated-grid" />;

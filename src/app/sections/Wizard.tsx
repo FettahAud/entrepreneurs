@@ -17,6 +17,7 @@ import React from "react";
 import WizardItem from "../components/WizardItem";
 import { useGSAP } from "@gsap/react";
 import BGGRid from "../components/BgGrid";
+import { BGAnimatedLines } from "../components/LottieGraphs";
 
 export type Item = {
   icon: StaticImageData;
@@ -101,6 +102,7 @@ export default function Wizard() {
   return (
     <div id="wizard" ref={wizard}>
       <BGGRid images={grids} />
+      <BGAnimatedLines />
       <div className="highlight highlight-red"></div>
       <h1 ref={header} className="section-title">
         <span>

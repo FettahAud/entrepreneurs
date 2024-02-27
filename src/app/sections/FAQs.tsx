@@ -5,6 +5,7 @@ import gridLaptop from "@/../public/sections-grids/faq/bg-grid-1280.svg";
 import gridTablet from "@/../public/sections-grids/faq/bg-grid-768.svg";
 import gridMobile from "@/../public/sections-grids/faq/bg-grid-375.svg";
 import BGGRid from "../components/BgGrid";
+import { BGAnimatedLines } from "../components/LottieGraphs";
 
 export default function FAQs() {
   const grids = [gridDesktop, gridLaptop, gridTablet, gridMobile];
@@ -69,6 +70,7 @@ export default function FAQs() {
   return (
     <div id="faq">
       <BGGRid images={grids} />
+      <BGAnimatedLines />
       <div className="highlight highlight-red"></div>
       <h1 className="section-title">
         <span>Questions</span>

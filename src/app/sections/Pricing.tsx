@@ -12,6 +12,7 @@ import gridLaptop from "@/../public/sections-grids/pricing/bg-grid-1280.svg";
 import gridTablet from "@/../public/sections-grids/pricing/bg-grid-768.svg";
 import gridMobile from "@/../public/sections-grids/pricing/bg-grid-375.svg";
 import BGGRid from "../components/BgGrid";
+import { BGAnimatedLines } from "../components/LottieGraphs";
 
 type Card = {
   title: string;
@@ -251,6 +252,7 @@ export default function Pricing() {
   return (
     <div id="pricing">
       <BGGRid images={grids} />
+      <BGAnimatedLines />
       <div className="highlight highlight-red"></div>
       <div ref={header} className="header">
         <div className="small-badge">
