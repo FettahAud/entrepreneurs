@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { device } from "./currentDevice";
-type Device = "mobile" | "tablet" | "laptop" | "desktop";
+type Device = "mobile" | "tablet" | "laptop" | "desktop" | "server";
 type Store = {
   device: Device;
   setDevice: (device: Device) => void;

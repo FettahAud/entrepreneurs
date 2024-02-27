@@ -1,4 +1,5 @@
-const getDevice = () => {
+type Device = "mobile" | "tablet" | "laptop" | "desktop" | "server";
+const getDevice = (): { device: Device; breakpoint: number } => {
   if (typeof window === "undefined") {
     return { device: "server", breakpoint: Infinity };
   }
